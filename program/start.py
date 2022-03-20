@@ -91,15 +91,15 @@ async def start_(c: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("❰𝗖𝗹𝗶𝗰𝗸 𝗛𝗲𝗿𝗲 𝗧𝗼 𝗔𝗱𝗱 𝗠𝗲❱", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("➕𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 𝖳𝗈 𝖠𝖽𝖽 𝖬𝖾➕", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],
                  [
-                    InlineKeyboardButton("❰𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀❱", callback_data="command_list")
+                    InlineKeyboardButton("❓𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌", callback_data="command_list")
                 ],[
-                    InlineKeyboardButton("❰𝗦𝘂𝗽𝗽𝗼𝗿𝘁❱", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("❰𝗨𝗽𝗱𝗮𝘁𝗲𝘀❱", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📢 𝖲𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("𝖴𝗉𝖽𝖺𝗍𝖾𝗌 📡", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("❰𝗢𝘄𝗻𝗲𝗿❱", url="https://t.me/Its_romeoo")
+                    InlineKeyboardButton("𝖮𝗐𝗇𝖾𝗋'𝗑𝖣 🚩", url="https://t.me/Its_romeoo")
                 ],
             ]
         ),
