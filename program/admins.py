@@ -73,7 +73,7 @@ async def stop(client, m: Message):
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await m.reply_text("✅ The userbot has disconnected from the video chat.")
+            await m.reply_text("» 𝗦𝘁𝗼𝗽 !! 𝗣𝗹𝗮𝘆𝗶𝗻𝗴 𝗠𝘂𝘀𝗶𝗰 ❌")
         except Exception as e:
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
@@ -288,7 +288,7 @@ async def cbstop(_, query: CallbackQuery):
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await query.edit_message_text("✅ The userbot has disconnected from the video chat.", reply_markup=close_mark)
+            await query.edit_message_text("» 𝗦𝘁𝗼𝗽 !! 𝗣𝗹𝗮𝘆𝗶𝗻𝗴 𝗠𝘂𝘀𝗶𝗰 ❌", reply_markup=close_mark)
         except Exception as e:
             traceback.print_exc()
             await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
