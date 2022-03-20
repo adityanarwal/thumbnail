@@ -38,8 +38,9 @@ from config import (
 @check_blacklist()
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
-    await query.edit_message_text(
-  ,
+    await query..edit_message_photo(
+        photo=f"https://telegra.ph//file/d018eb81849c32d3cf8e4.jpg",
+        caption=f"""** **""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
