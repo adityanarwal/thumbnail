@@ -140,7 +140,7 @@ async def ping_pong(c: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("pinging...")
     delta_ping = time() - start
-    await m_reply.edit_text("🏓 PONG !\n" f"⏱ `{delta_ping * 1000:.3f} ms`")
+    await m_reply.edit_text("𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗦𝗽𝗲𝗲𝗱 !!" f"⏱ `{delta_ping * 1000:.3f} 𝗺𝘀`")
 
 
 @Client.on_message(command(["uptime", f"uptime@{BOT_USERNAME}"]) & ~filters.edited)
@@ -183,17 +183,13 @@ async def new_chat(c: Client, m: Message):
                     return await bot.leave_chat(chat_id)
             if member.id == me_bot.id:
                 return await m.reply(
-                    "❤️ Thanks for adding me to the **Group** !\n\n"
-                    "Appoint me as administrator in the **Group**, otherwise I will not be able to work properly, and don't forget to type `/userbotjoin` for invite the assistant.\n\n"
-                    "Once done, then type `/reload`",
+                    "𝗧𝗵𝗻𝘅 𝗕𝗮𝗯𝘆 𝗔𝗱𝗱 𝗞𝗿𝗿𝗻𝗲 𝗞 𝗟𝗶𝘆𝗲 !! 𝗔𝗯 𝗝𝗮𝗹𝗱𝗶 𝗦𝗲 𝗣𝗿𝗼𝗺𝗼𝘁𝗲 𝗸𝗿𝗼𝗼 𝗔𝘂𝗿 /play 𝗸𝗶 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗕𝗵𝗲𝗷𝗼 𝗡𝗵𝗶𝗶 𝘁𝗼𝗵 𝗙𝗶𝗿 /userbotjoin 𝗸𝗶 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗕𝗵𝗲𝗷𝗼 𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁 𝗞𝗼 𝗚𝗿𝗼𝘂𝗽 𝗝𝗼𝗶𝗻 𝗞𝗿𝘄𝗮𝗻𝗲 𝗞 𝗟𝗶𝘆𝗲....",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                                InlineKeyboardButton("💭 Support", url=f"https://t.me/{GROUP_SUPPORT}")
-                            ],[
-                                InlineKeyboardButton("👤 Assistant", url=f"https://t.me/{me_user.username}")
-                            ]
+                                InlineKeyboardButton(" ", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                                InlineKeyboardButton(" ", url=f"https://t.me/{GROUP_SUPPORT}")
+                            ],
                         ]
                     )
                 )
