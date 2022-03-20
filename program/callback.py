@@ -117,22 +117,18 @@ async def commands_set(_, query: CallbackQuery):
     user_id = query.from_user.id
     await query.answer("commands menu")
     await query.edit_message_text(
-        f"""✨ **Hello [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
+        f"""✨ **𝗛𝗲𝗹𝗹𝗼 [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
 
 » Check out the menu below to read the module information & see the list of available Commands !
-
-All commands can be used with (`! / .`) handler""",
+""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👮🏻‍♀️ Admins Commands", callback_data="admin_command"),
+                    InlineKeyboardButton("❰𝗜𝗳 𝘆𝗼𝘂 𝗮𝗿𝗲 𝗔𝗱𝗺𝗶𝗻❱", callback_data="admin_command"),
                 ],[
-                    InlineKeyboardButton("👩🏻‍💼 Users Commands", callback_data="user_command"),
+                    InlineKeyboardButton("❰𝗜𝗳 𝘆𝗼𝘂 𝗮𝗿𝗲 𝗠𝗲𝗺𝗯𝗲𝗿❱", callback_data="user_command"),
                 ],[
-                    InlineKeyboardButton("Sudo Commands", callback_data="sudo_command"),
-                    InlineKeyboardButton("Owner Commands", callback_data="owner_command"),
-                ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="home_start")
+                    InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="home_start")
                 ],
             ]
         ),
@@ -144,7 +140,7 @@ All commands can be used with (`! / .`) handler""",
 async def user_set(_, query: CallbackQuery):
     await query.answer("basic commands")
     await query.edit_message_text(
-        f"""✏️ Command list for all user.
+        f"""✨ 𝗖𝗺𝗱𝘀 𝗙𝗼𝗿 𝗚𝗿𝗼𝘂𝗽 𝗠𝗲𝗺𝗯𝗲𝗿𝘀.
 
 » /play (song name/youtube link) - play the music from youtube
 » /stream (m3u8/youtube live link) - play youtube/m3u8 live stream music
@@ -159,7 +155,7 @@ async def user_set(_, query: CallbackQuery):
 » /uptime - show the bot uptime status
 » /alive - show the bot alive info (in Group only)""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
         ),
     )
 
@@ -169,7 +165,7 @@ async def user_set(_, query: CallbackQuery):
 async def admin_set(_, query: CallbackQuery):
     await query.answer("admin commands")
     await query.edit_message_text(
-        f"""✏️ Command list for group admin.
+        f"""✨ 𝗖𝗺𝗱𝘀 𝗙𝗼𝗿 𝗚𝗿𝗼𝘂𝗽 𝗔𝗱𝗺𝗶𝗻.
 
 » /pause - pause the current track being played
 » /resume - play the previously paused track
@@ -184,7 +180,7 @@ async def admin_set(_, query: CallbackQuery):
 » /startvc - start/restart the group call
 » /stopvc - stop/discard the group call""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
         ),
     )
 
