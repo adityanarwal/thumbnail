@@ -56,7 +56,7 @@ async def update_admin(client, message: Message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        "✅ Bot **reloaded** correctly!\n✅ The **Admin list** has **updated.**"
+        "𝐁ᴏᴛ 𝖲𝖾𝗋𝗏𝖾𝗋 𝖱𝖾𝗅𝗈𝖺𝖽𝖾𝖽 !! 𝖱𝖾𝖼𝗈𝗇𝗇𝖾𝖼𝗍𝖾𝖽 𝗍𝗈 𝗍𝗁𝖾 𝖲𝗉𝗈𝗍𝗂𝖿𝗒™ 𝐍𝖾𝗍𝗐𝗈𝗋𝗄...."
     )
 
 
@@ -95,7 +95,7 @@ async def pause(client, m: Message):
             await calls.pause_stream(chat_id)
             await music_off(chat_id)
             await m.reply_text(
-                "⏸ **Track paused.**\n\n• **To resume the stream, use the**\n» /resume command."
+                "~ 𝖬𝗎𝗌𝗂𝖼 ▶️ 𝖯𝖺𝗎𝗌𝖾𝖽 !!"
             )
         except Exception as e:
             traceback.print_exc()
@@ -118,7 +118,7 @@ async def resume(client, m: Message):
             await calls.resume_stream(chat_id)
             await music_on(chat_id)
             await m.reply_text(
-                "▶️ **Track resumed.**\n\n• **To pause the stream, use the**\n» /pause command."
+                "~ 𝖬𝗎𝗌𝗂𝖼 ⏸ 𝖱𝖾𝗌𝗎𝗆𝖾𝖽 !!"
             )
         except Exception as e:
             traceback.print_exc()
@@ -153,7 +153,7 @@ async def skip(c: Client, m: Message):
             chat_id,
             photo=image,
             reply_markup=InlineKeyboardMarkup(buttons),
-            caption=f"⏭ **Skipped** to the next track.\n\n🗂 **Name:** [{queue[0]}]({queue[1]})\n💭 **Chat:** `{chat_id}`\n🧸 **Request by:** {requester}",
+            caption=f"» 𝖲𝗈𝗇𝗀 𝗁𝖺𝗌 𝖻𝖾𝖾𝗇 𝗌𝗄𝗂𝗉𝗉𝖾𝖽 !!.\n\n🗂 **Name:** [{queue[0]}]({queue[1]})\n💭 **Chat:** `{chat_id}`\n🧸 **Request by:** {requester}",
         )
         remove_if_exists(image)
 
@@ -172,7 +172,7 @@ async def mute(client, m: Message):
             await calls.mute_stream(chat_id)
             await music_off(chat_id)
             await m.reply_text(
-                "🔇 **Userbot muted.**\n\n• **To unmute the userbot, use the**\n» /unmute command."
+                "~ 𝖴𝗌𝖾𝗋𝖡𝗈𝗍 !! 𝖬𝗎𝗍𝖾𝖽 シ︎"
             )
         except Exception as e:
             traceback.print_exc()
@@ -195,7 +195,7 @@ async def unmute(client, m: Message):
             await calls.unmute_stream(chat_id)
             await music_on(chat_id)
             await m.reply_text(
-                "🔊 **Userbot unmuted.**\n\n• **To mute the userbot, use the**\n» /mute command."
+                "~ 𝐔𝗌𝖾𝗋𝐁𝗈𝗍 !! 𝖴𝗇𝗆𝗎𝗍𝖾𝖽...."
             )
         except Exception as e:
             traceback.print_exc()
@@ -246,7 +246,7 @@ async def cbpause(_, query: CallbackQuery):
                 return
             await calls.pause_stream(chat_id)
             await music_off(chat_id)
-            await query.answer("⏸ The music has paused !\n\n» to resume the music click on resume button !", show_alert=True)
+            await query.answer("~ 𝖬𝗎𝗌𝗂𝖼 ▶️ 𝖯𝖺𝗎𝗌𝖾𝖽 !!", show_alert=True)
         except Exception as e:
             traceback.print_exc()
             await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
@@ -268,7 +268,7 @@ async def cbresume(_, query: CallbackQuery):
                 return
             await calls.resume_stream(chat_id)
             await music_on(chat_id)
-            await query.answer("▶️ The music has resumed !\n\n» to pause the music click on pause button !", show_alert=True)
+            await query.answer("~ 𝖬𝗎𝗌𝗂𝖼 ⏸ 𝖱𝖾𝗌𝗎𝗆𝖾𝖽 !!", show_alert=True)
         except Exception as e:
             traceback.print_exc()
             await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
