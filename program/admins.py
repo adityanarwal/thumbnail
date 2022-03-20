@@ -78,7 +78,7 @@ async def stop(client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
 
 
 @Client.on_message(
@@ -101,7 +101,7 @@ async def pause(client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
 
 
 @Client.on_message(
@@ -124,7 +124,7 @@ async def resume(client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
 
 
 @Client.on_message(command(["skip", f"skip@{BOT_USERNAME}", "vskip"]) & other_filters)
@@ -135,7 +135,7 @@ async def skip(c: Client, m: Message):
     chat_id = m.chat.id
     queue = await skip_current_song(chat_id)
     if queue == 0:
-        await m.reply_text("❌ nothing is currently playing")
+        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
     elif queue == 1:
         await m.reply_text("» There's no more music in queue to skip, userbot leaving video chat.")
     elif queue == 2:
@@ -178,7 +178,7 @@ async def mute(client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
 
 
 @Client.on_message(
@@ -201,7 +201,7 @@ async def unmute(client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
 
 
 @Client.on_message(
@@ -229,7 +229,7 @@ async def change_volume(c: Client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"🚫 **error:**\n\n`{e}`")
     else:
-        await m.reply_text("❌ **nothing is streaming**")
+        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
 
 
 @Client.on_callback_query(filters.regex("set_pause"))
@@ -251,7 +251,7 @@ async def cbpause(_, query: CallbackQuery):
             traceback.print_exc()
             await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_resume"))
@@ -273,7 +273,7 @@ async def cbresume(_, query: CallbackQuery):
             traceback.print_exc()
             await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_stop"))
@@ -293,7 +293,7 @@ async def cbstop(_, query: CallbackQuery):
             traceback.print_exc()
             await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_mute"))
@@ -315,7 +315,7 @@ async def cbmute(_, query: CallbackQuery):
             traceback.print_exc()
             await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_unmute"))
@@ -337,7 +337,7 @@ async def cbunmute(_, query: CallbackQuery):
             traceback.print_exc()
             await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_skip"))
@@ -350,7 +350,7 @@ async def cbskip(_, query: CallbackQuery):
     user_id = query.from_user.id
     queue = await skip_current_song(chat_id)
     if queue == 0:
-        await query.answer("❌ nothing is currently playing", show_alert=True)
+        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
     elif queue == 1:
         await query.answer("» There's no more music in queue to skip, userbot leaving video chat.", show_alert=True)
     elif queue == 2:
