@@ -40,7 +40,9 @@ async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
     await query..edit_message_photo(
         photo=f"https://telegra.ph//file/d018eb81849c32d3cf8e4.jpg",
-        caption=f"""** **""",
+        caption=f"""**𝙄 𝙖𝙢 𝙎𝙪𝙥𝙚𝙧𝙁𝙖𝙨𝙩 𝙋𝙡𝙖𝙮𝙚𝙧 𝙏𝙤 𝙋𝙡𝙖𝙮 𝙈𝙪𝙨𝙞𝙘 𝙄𝙣 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 𝙑𝙤𝙞𝙘𝙚 𝘾𝙝𝙖𝙩.
+
+𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 𝙎𝙥𝙤𝙩𝙞𝙛𝙮™**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
