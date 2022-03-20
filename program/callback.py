@@ -165,7 +165,7 @@ async def user_set(_, query: CallbackQuery):
 async def admin_set(_, query: CallbackQuery):
     await query.answer("admin commands")
     await query.edit_message_text(
-        f"""✨ 𝗖𝗺𝗱𝘀 𝗙𝗼𝗿 𝗚𝗿𝗼𝘂𝗽 𝗔𝗱𝗺𝗶𝗻.
+        f"""✨ 𝗖𝗺𝗱𝘀 𝗙𝗼𝗿 𝗚𝗿𝗼𝘂𝗽 𝗔𝗱𝗺𝗶𝗻𝘀.
 
 » /pause - pause the current track being played
 » /resume - play the previously paused track
