@@ -118,14 +118,14 @@ async def alive(c: Client, message: Message):
     buttons = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("✨ Group", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("❰𝗦𝘂𝗽𝗽𝗼𝗿𝘁❱", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
-                    "📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    "❰𝗨𝗽𝗱𝗮𝘁𝗲𝘀❱", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
             ]
         ]
     )
-    text = f"**Hello {message.from_user.mention()}, I'm {me_bot.first_name}**\n\n🧑🏼‍💻 My Master: [{ALIVE_NAME}](https://t.me/{OWNER_USERNAME})\n👾 Bot Version: `v{__version__}`\n🔥 Pyrogram Version: `{pyrover}`\n🐍 Python Version: `{__python_version__}`\n✨ PyTgCalls Version: `{pytover.__version__}`\n🆙 Uptime Status: `{uptime}`\n\n❤ **Thanks for Adding me here, for playing video & music on your Group's video chat**"
+    text = f"**𝗛𝗲𝘆𝘆 {message.from_user.mention()}, I'm {me_bot.first_name}**\n\n🧑🏼‍💻 My Master: [{ALIVE_NAME}](https://t.me/{OWNER_USERNAME})\n👾 Bot Version: `v{__version__}`\n🔥 Pyrogram Version: `{pyrover}`\n🐍 Python Version: `{__python_version__}`\n✨ PyTgCalls Version: `{pytover.__version__}`\n🆙 Uptime Status: `{uptime}`\n\n **𝗧𝗵𝗶𝘀 𝗕𝗼𝘁 𝗜𝘀 𝗗𝗲𝘀𝗶𝗴𝗻𝗲𝗱 𝗕𝘆 𝗨𝘀𝗶𝗻𝗴 𝗣𝘆𝘁𝗵𝗼𝗻 𝗕𝘆 #𝙊𝙥_𝙍𝙤𝙢𝙚𝙤**"
     await c.send_photo(
         chat_id,
         photo=f"{ALIVE_IMG}",
@@ -187,8 +187,8 @@ async def new_chat(c: Client, m: Message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton(" ", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                                InlineKeyboardButton(" ", url=f"https://t.me/{GROUP_SUPPORT}")
+                                InlineKeyboardButton("❰𝗨𝗽𝗱𝗮𝘁𝗲𝘀❱", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                                InlineKeyboardButton("❰𝗦𝘂𝗽𝗽𝗼𝗿𝘁❱", url=f"https://t.me/{GROUP_SUPPORT}")
                             ],
                         ]
                     )
