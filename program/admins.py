@@ -73,12 +73,12 @@ async def stop(client, m: Message):
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await m.reply_text("» 𝗦𝘁𝗼𝗽 !! 𝗣𝗹𝗮𝘆𝗶𝗻𝗴 𝗠𝘂𝘀𝗶𝗰 ❌")
+            await m.reply_text("× 𝖲𝗍𝗈𝗉 !! 𝖯𝗅𝖺𝗒𝗂𝗇𝗀 𝖬𝗎𝗌𝗂𝖼 🔇")
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×")
     else:
-        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
+        await m.reply_text("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....")
 
 
 @Client.on_message(
@@ -99,9 +99,9 @@ async def pause(client, m: Message):
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×")
     else:
-        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
+        await m.reply_text("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....")
 
 
 @Client.on_message(
@@ -122,9 +122,9 @@ async def resume(client, m: Message):
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×")
     else:
-        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
+        await m.reply_text("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....")
 
 
 @Client.on_message(command(["skip", f"skip@{BOT_USERNAME}", "vskip"]) & other_filters)
@@ -135,7 +135,7 @@ async def skip(c: Client, m: Message):
     chat_id = m.chat.id
     queue = await skip_current_song(chat_id)
     if queue == 0:
-        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
+        await m.reply_text("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....")
     elif queue == 1:
         await m.reply_text("» There's no more music in queue to skip, userbot leaving video chat.")
     elif queue == 2:
@@ -176,9 +176,9 @@ async def mute(client, m: Message):
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×")
     else:
-        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
+        await m.reply_text("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....")
 
 
 @Client.on_message(
@@ -199,9 +199,9 @@ async def unmute(client, m: Message):
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×")
     else:
-        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
+        await m.reply_text("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....")
 
 
 @Client.on_message(
@@ -227,9 +227,9 @@ async def change_volume(c: Client, m: Message):
             )
         except Exception as e:
             traceback.print_exc()
-            await m.reply_text(f"🚫 **error:**\n\n`{e}`")
+            await m.reply_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×")
     else:
-        await m.reply_text("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌")
+        await m.reply_text("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....")
 
 
 @Client.on_callback_query(filters.regex("set_pause"))
@@ -249,9 +249,9 @@ async def cbpause(_, query: CallbackQuery):
             await query.answer("⏸ The music has paused !\n\n» to resume the music click on resume button !", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
     else:
-        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
+        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_resume"))
@@ -271,9 +271,9 @@ async def cbresume(_, query: CallbackQuery):
             await query.answer("▶️ The music has resumed !\n\n» to pause the music click on pause button !", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
     else:
-        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
+        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_stop"))
@@ -288,12 +288,12 @@ async def cbstop(_, query: CallbackQuery):
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await query.edit_message_text("» 𝗦𝘁𝗼𝗽 !! 𝗣𝗹𝗮𝘆𝗶𝗻𝗴 𝗠𝘂𝘀𝗶𝗰 ❌", reply_markup=close_mark)
+            await query.edit_message_text("× 𝖲𝗍𝗈𝗉 !! 𝖯𝗅𝖺𝗒𝗂𝗇𝗀 𝖬𝗎𝗌𝗂𝖼 🔇", reply_markup=close_mark)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
     else:
-        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
+        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_mute"))
@@ -313,9 +313,9 @@ async def cbmute(_, query: CallbackQuery):
             await query.answer("🔇 The stream userbot has muted !\n\n» to unmute the userbot click on unmute button !", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
     else:
-        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
+        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_unmute"))
@@ -335,9 +335,9 @@ async def cbunmute(_, query: CallbackQuery):
             await query.answer("🔊 The stream userbot has unmuted !\n\n» to mute the userbot click on mute button !", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"🚫 **error:**\n\n`{e}`", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
     else:
-        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
+        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_skip"))
@@ -350,7 +350,7 @@ async def cbskip(_, query: CallbackQuery):
     user_id = query.from_user.id
     queue = await skip_current_song(chat_id)
     if queue == 0:
-        await query.answer("» 𝗡𝗼𝘁𝗵𝗶𝗻𝗴 !! 𝗜𝘀 𝗦𝘁𝗿𝗲𝗮𝗺𝗶𝗻𝗴 ❌", show_alert=True)
+        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
     elif queue == 1:
         await query.answer("» There's no more music in queue to skip, userbot leaving video chat.", show_alert=True)
     elif queue == 2:
