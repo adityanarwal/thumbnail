@@ -84,7 +84,7 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_photo(
-        photo=f"https://telegra.ph//file/d018eb81849c32d3cf8e4.jpg",
+        photo=f"https://telegra.ph//file/468858a7a0eeb9fe8889b.jpg",
         caption=f"""**𝖨 𝖺𝗆 𝖲𝗎𝗉𝖾𝗋𝖥𝖺𝗌𝗍 𝗉𝗅𝖺𝗒𝖾𝗋 𝗍𝗈 𝗉𝗅𝖺𝗒 𝗆𝗎𝗌𝗂𝖼 𝗂𝗇 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉𝗌 𝗏𝗈𝗂𝖼𝖾 𝖼𝗁𝖺𝗍. 
 
 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖻𝗒 𝖲𝗉𝗈𝗍𝗂𝖿𝗒™**""",
