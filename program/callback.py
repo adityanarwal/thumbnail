@@ -172,7 +172,7 @@ async def admin_set(_, query: CallbackQuery):
 » /vmute - mute the streamer userbot on group call
 » /vunmute - unmute the streamer userbot on group call
 » /volume `1-200` - adjust the volume of music (userbot must be admin)
-» /reload - reload bot and refresh the admin data
+» /refresh - refresh the bot server and refresh the admin data
 » /userbotjoin - invite the userbot to join group
 » /userbotleave - order userbot to leave from group
 » /startvc - start/restart the group call
