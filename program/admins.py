@@ -45,7 +45,7 @@ from pyrogram.types import (
 )
 
 
-@Client.on_message(command(["reload", f"reload@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["refresh", f"refresh@{BOT_USERNAME}"]) & other_filters)
 @authorized_users_only
 @check_blacklist()
 async def update_admin(client, message: Message):
@@ -56,7 +56,7 @@ async def update_admin(client, message: Message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        "𝐁ᴏᴛ 𝖲𝖾𝗋𝗏𝖾𝗋 𝖱𝖾𝗅𝗈𝖺𝖽𝖾𝖽 !! 𝖱𝖾𝖼𝗈𝗇𝗇𝖾𝖼𝗍𝖾𝖽 𝗍𝗈 𝗍𝗁𝖾 𝖲𝗉𝗈𝗍𝗂𝖿𝗒™ 𝐍𝖾𝗍𝗐𝗈𝗋𝗄...."
+        "𝗕𝗈𝗍 𝗦𝖾𝗋𝗏𝖾𝗋 𝗥𝖾𝖿𝗋𝖾𝗌𝗁𝖾𝖽 𝗦𝗎𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 !! 𝗣𝗈𝗐𝖾𝗋𝖾𝖽 𝗕𝗒 #𝐍𝐅𝐒 𝙭𝘿 𝙎𝘦𝘳𝘷𝘦𝘳."
     )
 
 
