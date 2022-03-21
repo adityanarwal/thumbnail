@@ -148,6 +148,7 @@ async def user_set(_, query: CallbackQuery):
 » /lyric (query) - search for song lyrics based on the name of the song
 » /video (query) - download video from youtube
 » /song (query) - download song from youtube
+» /repo - Get The Bot Repo !!
 » /search (query) - search for the youtube video link
 » /ping - show the bot ping status
 » /uptime - show the bot uptime status
