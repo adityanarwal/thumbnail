@@ -124,9 +124,9 @@ async def commands_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("𝖠𝖽𝗆𝗂𝗇𝗌 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 »", callback_data="admin_command"),
+                    InlineKeyboardButton("𝗖𝗆𝖽𝗌 𝗙𝗈𝗋 𝗚𝗋𝗈𝗎𝗉 𝗔𝖽𝗆𝗂𝗇𝗌", callback_data="admin_command"),
                 ],[
-                    InlineKeyboardButton("𝖬𝖾𝗆𝖻𝖾𝗋𝗌 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 »", callback_data="user_command"),
+                    InlineKeyboardButton("𝗖𝗆𝖽𝗌 𝗙𝗈𝗋 𝗚𝗋𝗈𝗎𝗉 𝗠𝖾𝗆𝖻𝖾𝗋𝗌", callback_data="user_command"),
                 ],
             ]
         ),
