@@ -213,3 +213,19 @@ async def chat_watcher_func(_, message: Message):
         await message.reply_text(
             f"👮🏼 (> {suspect} <)\n\n**Gbanned** user detected, that user has been gbanned by sudo user and was blocked from this Chat !\n\n🚫 **Reason:** potential spammer and abuser."
         )
+
+
+@Client.on_message(command(["repo"]) & filters.group & ~filters.edited)
+async def help(client: Client, message: Message): 
+    await message.reply_photo( 
+        photo=f"https://telegra.ph//file/1dbc278c59a56d226bd46.jpg", 
+        caption=f"""""", 
+        reply_markup=InlineKeyboardMarkup( 
+            [ 
+                [ 
+                    InlineKeyboardButton( 
+                        "❰𝗖𝗅𝗂𝖼𝗄 𝗛𝖾𝗋𝖾 𝗧𝗈 𝗚𝖾𝗍 𝗥𝖾𝗉𝗈❱", url=f"https://t.me/Its_romeoo") 
+                ] 
+            ] 
+        ), 
+    )
