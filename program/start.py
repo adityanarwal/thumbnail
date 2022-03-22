@@ -84,22 +84,22 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_photo(
-        photo=f"https://telegra.ph//file/468858a7a0eeb9fe8889b.jpg",
+        photo=f"https://telegra.ph//file/696707ef7a2c43e00a4b3.jpg",
         caption=f"""**𝖨 𝖺𝗆 𝖲𝗎𝗉𝖾𝗋𝖥𝖺𝗌𝗍 𝗉𝗅𝖺𝗒𝖾𝗋 𝗍𝗈 𝗉𝗅𝖺𝗒 𝗆𝗎𝗌𝗂𝖼 𝗂𝗇 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉𝗌 𝗏𝗈𝗂𝖼𝖾 𝖼𝗁𝖺𝗍. 
 
 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖻𝗒 𝖲𝗉𝗈𝗍𝗂𝖿𝗒™**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("➕𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 𝖳𝗈 𝖠𝖽𝖽 𝖬𝖾➕", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton(" ", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],
                  [
-                    InlineKeyboardButton("❓𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌", callback_data="command_list")
+                    InlineKeyboardButton("𝗖𝗈𝗆𝗆𝖺𝗇𝖽𝗌❓", callback_data="command_list")
                 ],[
-                    InlineKeyboardButton("📢 𝖲𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("𝖴𝗉𝖽𝖺𝗍𝖾𝗌 📡", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📨 𝗦𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("𝗨𝗉𝖽𝖺𝗍𝖾𝗌 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("𝖮𝗐𝗇𝖾𝗋'𝗑𝖣 🚩", url="https://t.me/Its_romeoo")
+                    InlineKeyboardButton("#𝐍𝐅𝐒 𝗢𝗐𝗇𝖾𝗋 シ︎", url="https://t.me/Its_romeoo")
                 ],
             ]
         ),
