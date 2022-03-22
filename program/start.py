@@ -93,7 +93,7 @@ async def start_(c: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(" ", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("✚ 𝗔𝖽𝖽 𝖬𝖾 𝖳𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ✚", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],
                  [
                     InlineKeyboardButton("𝗖𝗈𝗆𝗆𝖺𝗇𝖽𝗌❓", callback_data="command_list")
