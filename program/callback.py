@@ -52,10 +52,10 @@ Use inline buttons given below to know more about me.**""",
                 ],[
                     InlineKeyboardButton("❰𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀❱", callback_data="command_list"),
                 ],[
-                    InlineKeyboardButton("❰𝗦𝘂𝗽𝗽𝗼𝗿𝘁❱", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("❰𝗨𝗽𝗱𝗮𝘁𝗲𝘀❱", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton(" ", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton(" ", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("❰𝗢𝘄𝗻𝗲𝗿❱", url="https://t.me/Its_romeoo")
+                    InlineKeyboardButton(" ", url="https://t.me/Its_romeoo")
                 ],
             ]
         ),
