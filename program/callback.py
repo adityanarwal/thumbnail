@@ -92,13 +92,13 @@ Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Network 📡", url=f" "),
-                    InlineKeyboardButton("Owner 🧑‍💻", url=f" ")
+                    InlineKeyboardButton("Network 📡", url=f"https://t.me/CloseFriendsCommunity"),
+                    InlineKeyboardButton("Owner 🧑‍💻", url=f"https://t.me/PhoenixWarmed")
                 ],[
                     InlineKeyboardButton("Support 📨", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("Updates 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("Developer™", url=" ")
+                    InlineKeyboardButton("Developer™", url="https://t.me/Its_romeoo")
                 ],[
                     InlineKeyboardButton("🔙 𝗕𝖺𝖼𝗄 𝗛𝗈𝗆𝖾", callback_data="home_start")
                 ]
