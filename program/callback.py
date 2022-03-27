@@ -38,11 +38,13 @@ from config import (
 @check_blacklist()
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
-    await query.edit_message_photo(
-        photo=f"https://telegra.ph//file/d018eb81849c32d3cf8e4.jpg",
-        caption=f"""**𝙄 𝙖𝙢 𝙎𝙪𝙥𝙚𝙧𝙁𝙖𝙨𝙩 𝙋𝙡𝙖𝙮𝙚𝙧 𝙏𝙤 𝙋𝙡𝙖𝙮 𝙈𝙪𝙨𝙞𝙘 𝙄𝙣 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 𝙑𝙤𝙞𝙘𝙚 𝘾𝙝𝙖𝙩.
-
-𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 𝙎𝙥𝙤𝙩𝙞𝙛𝙮™**""",
+    await query.edit_message_text(
+        f"""**Hello !! I am Izumi player to help group owner , admins and members with my super advance features, 
+For reporting any issues regarding me kindly report in my support chat so my developers can Fix me out for your needs.
+- - - - - - - - - - - - - - - - - - - - - - - 
+ᴘᴏᴡᴇʀᴇᴅ ʙʏ :- [𝗖𝗙𝗖](https://t.me/CloseFriendsCommunity)
+- - - - - - - - - - - - - - - - - - - - - - -
+Use inline buttons given below to know more about me.**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
