@@ -98,7 +98,7 @@ Thanks !!**""",
                     InlineKeyboardButton("Support 📨", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("Updates 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("Developer™", url="https://t.me/Its_romeoo")
+                    InlineKeyboardButton("Source Code™", url="https://t.me/Its_romeoo")
                 ],[
                     InlineKeyboardButton("🔙 𝗕𝖺𝖼𝗄 𝗛𝗈𝗆𝖾", callback_data="home_start")
                 ]
