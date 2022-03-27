@@ -96,7 +96,7 @@ async def start_(c: Client, message: Message):
                  [
                     InlineKeyboardButton("𝗖𝗈𝗆𝗆𝖺𝗇𝖽𝗌❓", callback_data="command_list")
                 ],[
-                    InlineKeyboardButton("📨 𝗦𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("𝗦𝗎𝗉𝗉𝗈𝗋𝗍 📨", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("𝗨𝗉𝖽𝖺𝗍𝖾𝗌 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
                     InlineKeyboardButton("𝗡𝖾𝗍𝗐𝗈𝗋𝗄 📡", url=f"https://t.me/PHOENIX_EMPIRE"),
