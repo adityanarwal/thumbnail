@@ -140,11 +140,8 @@ async def user_set(_, query: CallbackQuery):
 
 » /play (song name/youtube link) - play the music from youtube
 » /stream (m3u8/youtube live link) - play youtube/m3u8 live stream music
-» /vplay (video name/youtube link) - play the video from youtube
-» /vstream (m3u8/youtube live link) - play youtube/m3u8 live stream video
 » /playlist - view the queue list of songs and current playing song
 » /lyric (query) - search for song lyrics based on the name of the song
-» /video (query) - download video from youtube
 » /song (query) - download song from youtube
 » /repo - Get The Bot Repo !!
 » /search (query) - search for the youtube video link
@@ -167,8 +164,6 @@ async def admin_set(_, query: CallbackQuery):
 » /resume - play the previously paused track
 » /skip - goes to the next track
 » /stop - stop playback of the track and clears the queue
-» /vmute - mute the streamer userbot on group call
-» /vunmute - unmute the streamer userbot on group call
 » /volume `1-200` - adjust the volume of music (userbot must be admin)
 » /refresh - refresh the bot server and refresh the admin data
 » /userbotjoin - invite the userbot to join group
