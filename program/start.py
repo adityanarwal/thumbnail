@@ -101,7 +101,7 @@ Use inline buttons given below to know more about me.**""",
                     InlineKeyboardButton("𝗦𝗎𝗉𝗉𝗈𝗋𝗍 📨", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("𝗨𝗉𝖽𝖺𝗍𝖾𝗌 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("Commands❓", url=f"https://t.me/PHOENIX_EMPIRE"),
+                    InlineKeyboardButton("Commands❓", callback_data="command_list"),
                     InlineKeyboardButton("About 💬", url=f"https://t.me/PhoenixWarmed")
                 ],[
                     InlineKeyboardButton("✚ Add Me To Your Group ✚", url="https://t.me/{me_bot.username}?startgroup=true")
