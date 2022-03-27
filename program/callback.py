@@ -92,15 +92,15 @@ Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("📚 Commands", callback_data="command_list"),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("Network 📡", url=f" "),
+                    InlineKeyboardButton("Owner 🧑‍💻", url=f" ")
                 ],[
-                    InlineKeyboardButton("👥 Support Group", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("📣 Support Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("Support 📨", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("Updates 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("🌐 Source Code", url="https://github.com/levina-lab/video-stream")
+                    InlineKeyboardButton("Developer™", url=" ")
                 ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="home_start")
+                    InlineKeyboardButton("🔙 𝗕𝖺𝖼𝗄 𝗛𝗈𝗆𝖾", callback_data="home_start")
                 ]
             ]
         ),
