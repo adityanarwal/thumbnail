@@ -142,7 +142,8 @@ async def user_set(_, query: CallbackQuery):
 » /stream (m3u8/youtube live link) - play youtube/m3u8 live stream music
 » /playlist - view the queue list of songs and current playing song
 » /lyric (query) - search for song lyrics based on the name of the song
-» /song (query) - download song from youtube
+» /song (query) - download song from YouTube
+» /video (query) - download video from YouTube
 » /repo - Get The Bot Repo !!
 » /search (query) - search for the youtube video link
 » /ping - show the bot ping status
