@@ -529,7 +529,7 @@ async def live_music_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"**» Sᴏɴɢ :-** [{songname}]({url}) | `live`\n**» Usᴇʀ :-** {requester}",
+                            caption=f"**» Sᴏɴɢ :** [{songname}]({url}) | `live`\n**» Usᴇʀ :** {requester}",
                         )
                         remove_if_exists(image)
                     except (NoActiveGroupCall, GroupCallNotFound):
