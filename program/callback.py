@@ -84,19 +84,11 @@ async def quick_set(_, query: CallbackQuery):
 async def guide_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
-        f"""❓ How to use this Bot ?, read the Guide below !
+        f"""**Izumi Music Bot is the bot designed by some noobs team for playing a high quality and unbreakable music and video in your groups voice chat.
 
-1.) First, add this bot to your Group.
-2.) Then, promote this bot as administrator on the Group also give all permissions except Anonymous admin.
-3.) After promoting this bot, type /reload in Group to update the admin data.
-3.) Invite @{me_user.username} to your group or type /userbotjoin to invite her, unfortunately the userbot will joined by itself when you type `/play (song name)` or `/vplay (song name)`.
-4.) Turn on/Start the video chat first before start to play video/music.
+This bot helps you to play music × video to search music from youtube and to download music × video from youtube server and many more features related to telegram voice chat.
 
-`- END, EVERYTHING HAS BEEN SETUP -`
-
-📌 If the userbot not joined to video chat, make sure if the video chat already turned on and the userbot in the chat.
-
-💡 If you have a follow-up questions about this bot, you can tell it on my support chat here: @{GROUP_SUPPORT}.""",
+Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
