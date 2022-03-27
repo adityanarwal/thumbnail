@@ -271,7 +271,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"💡 **Track added to queue »** `{pos}`\n\n**» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n **» Usᴇʀ :-** {requester}",
+                                caption=f"💡 **Track added to queue »** `{pos}`\n\n**» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n**» Usᴇʀ :-** {requester}",
                             )
                             remove_if_exists(image)
                         else:
@@ -296,7 +296,7 @@ async def audio_stream(c: Client, m: Message):
                                 await m.reply_photo(
                                     photo=image,
                                     reply_markup=InlineKeyboardMarkup(buttons),
-                                    caption=f"**» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n **» Usᴇʀ :-** {requester}",
+                                    caption=f"**» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n**» Usᴇʀ :-** {requester}",
                                 )
                                 remove_if_exists(image)
                             except (NoActiveGroupCall, GroupCallNotFound):
@@ -346,7 +346,7 @@ async def audio_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"💡 **Track added to queue »** `{pos}`\n\n **» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n **» Usᴇʀ :-** {requester}",
+                            caption=f"💡 **Track added to queue »** `{pos}`\n\n**» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n**» Usᴇʀ :-** {requester}",
                         )
                         remove_if_exists(image)
                     else:
@@ -456,7 +456,7 @@ async def live_music_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=f"{IMG_1}",
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"💡 **Track added to queue »** `{pos}`\n\n **» Sᴏɴɢ :-** [m3u8 audio stream]({url}) | `live`\n **» Usᴇʀ :-** {requester}",
+                        caption=f"💡 **Track added to queue »** `{pos}`\n\n**» Sᴏɴɢ :-** [m3u8 audio stream]({url}) | `live`\n**» Usᴇʀ :-** {requester}",
                     )
                 else:
                     try:
@@ -506,7 +506,7 @@ async def live_music_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=image,
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"💡 **Track added to queue »** `{pos}`\n\n **» Sᴏɴɢ :-** [{songname}]({url}) | `live`\n **» Usᴇʀ :-** {requester}",
+                        caption=f"💡 **Track added to queue »** `{pos}`\n\n**» Sᴏɴɢ :-** [{songname}]({url}) | `live`\n**» Usᴇʀ :-** {requester}",
                     )
                     remove_if_exists(image)
                 else:
