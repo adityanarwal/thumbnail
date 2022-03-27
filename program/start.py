@@ -99,6 +99,9 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("📨 𝗦𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("𝗨𝗉𝖽𝖺𝗍𝖾𝗌 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
+                    InlineKeyboardButton("𝗡𝖾𝗍𝗐𝗈𝗋𝗄 📡", url=f"https://t.me/PHOENIX_EMPIRE"),
+                    InlineKeyboardButton("𝗢𝗐𝗇𝖾𝗋 🧑‍💻", url=f"https://t.me/PhoenixWarmed")
+                ],[
                     InlineKeyboardButton("𝗦𝗈𝗎𝗋𝖼𝖾 𝗖𝗈𝖽𝖾™", url="https://t.me/Its_romeoo")
                 ],
             ]
