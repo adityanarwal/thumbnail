@@ -52,10 +52,10 @@ Use inline buttons given below to know more about me.**""",
                 ],[
                     InlineKeyboardButton("❰𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀❱", callback_data="command_list"),
                 ],[
-                    InlineKeyboardButton(" ", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton(" ", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("Commands❓", callback_data="command_list"),
+                    InlineKeyboardButton("About 💬", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton(" ", url="https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("✚ Add Me To Your Group ✚", url="https://t.me/{me_bot.username}?startgroup=true")
                 ],
             ]
         ),
