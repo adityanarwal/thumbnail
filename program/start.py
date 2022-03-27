@@ -93,14 +93,6 @@ Use inline buttons given below to know more about me.**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("✚ 𝗔𝖽𝖽 𝖬𝖾 𝖳𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ✚", url=f"https://t.me/{me_bot.username}?startgroup=true")
-                ],
-                 [
-                    InlineKeyboardButton("𝗖𝗈𝗆𝗆𝖺𝗇𝖽𝗌❓", callback_data="command_list")
-                ],[
-                    InlineKeyboardButton("𝗦𝗎𝗉𝗉𝗈𝗋𝗍 📨", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("𝗨𝗉𝖽𝖺𝗍𝖾𝗌 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
-                ],[
                     InlineKeyboardButton("Commands❓", callback_data="command_list"),
                     InlineKeyboardButton("About 💬", url=f"https://t.me/PhoenixWarmed")
                 ],[
