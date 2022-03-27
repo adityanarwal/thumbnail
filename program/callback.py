@@ -84,9 +84,9 @@ async def quick_set(_, query: CallbackQuery):
 async def guide_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
-        f"""**Izumi Music Bot is the bot designed by some noobs team for playing a high quality and unbreakable music and video in your groups voice chat.
+        f"""**Izumi Music Bot is the bot designed by some noobs team for playing a high quality and unbreakable music in your groups voice chat.
 
-This bot helps you to play music × video to search music from youtube and to download music × video from youtube server and many more features related to telegram voice chat.
+This bot helps you to play music to search music from youtube and to download music and video from youtube server and many more features related to telegram voice chat.
 
 Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
