@@ -84,12 +84,12 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_text(
-        f"""**𝖧𝖾𝗅𝗅𝗈 !! 𝖨 𝖺𝗆 𝖨𝗓𝗎𝗆𝗂 𝗉𝗅𝖺𝗒𝖾𝗋 𝗍𝗈 𝗁𝖾𝗅𝗉 𝗀𝗋𝗈𝗎𝗉 𝗈𝗐𝗇𝖾𝗋 , 𝖺𝖽𝗆𝗂𝗇𝗌 𝖺𝗇𝖽 𝗆𝖾𝗆𝖻𝖾𝗋𝗌 𝗐𝗂𝗍𝗁 𝗆𝗒 𝗌𝗎𝗉𝖾𝗋 𝖺𝖽𝗏𝖺𝗇𝖼𝖾 𝖿𝖾𝖺𝗍𝗎𝗋𝖾𝗌,
-𝖥𝗈𝗋 𝗋𝖾𝗉𝗈𝗋𝗍𝗂𝗇𝗀 𝖺𝗇𝗒 𝗂𝗌𝗌𝗎𝖾𝗌 𝗋𝖾𝗀𝖺𝗋𝖽𝗂𝗇𝗀 𝗆𝖾 𝗄𝗂𝗇𝖽𝗅𝗒 𝗋𝖾𝗉𝗈𝗋𝗍 𝗂𝗇 𝗆𝗒 𝗌𝗎𝗉𝗉𝗈𝗋𝗍 𝖼𝗁𝖺𝗍 𝗌𝗈 𝗆𝗒 𝖽𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋𝗌 𝖼𝖺𝗇 𝖿𝗂𝗑 𝗆𝖾 𝗈𝗎𝗍 𝖿𝗈𝗋 𝗒𝗈𝗎𝗋 𝗇𝖾𝖾𝖽𝗌.
+        f"""**Hello !! I am Izumi player to help group owner , admins and members with my super advance features, 
+For reporting any issues regarding me kindly report in my support chat so my developers can Fix me out for your needs.
 - - - - - - - - - - - - - - - - - - - - - - - 
 ᴘᴏᴡᴇʀᴇᴅ ʙʏ :- [𝗖𝗙𝗖](https://t.me/CloseFriendsCommunity)
 - - - - - - - - - - - - - - - - - - - - - - -
-ᴜsᴇ ɪɴʟɪɴᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ᴍᴇ.**""",
+Use inline buttons given below to know more about me.**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -101,10 +101,10 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("𝗦𝗎𝗉𝗉𝗈𝗋𝗍 📨", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("𝗨𝗉𝖽𝖺𝗍𝖾𝗌 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("𝗡𝖾𝗍𝗐𝗈𝗋𝗄 📡", url=f"https://t.me/PHOENIX_EMPIRE"),
-                    InlineKeyboardButton("𝗢𝗐𝗇𝖾𝗋 🧑‍💻", url=f"https://t.me/PhoenixWarmed")
+                    InlineKeyboardButton(" ", url=f"https://t.me/PHOENIX_EMPIRE"),
+                    InlineKeyboardButton(" ", url=f"https://t.me/PhoenixWarmed")
                 ],[
-                    InlineKeyboardButton("𝗦𝗈𝗎𝗋𝖼𝖾 𝗖𝗈𝖽𝖾™", url="https://t.me/Its_romeoo")
+                    InlineKeyboardButton(" ", url="https://t.me/Its_romeoo")
                 ],
             ]
         ),
