@@ -84,12 +84,10 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_photo(
-        photo=f"https://telegra.ph//file/696707ef7a2c43e00a4b3.jpg",
-        caption=f"""**𝘄𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝖭𝖥𝖲 𝖲𝖾𝗋𝗏𝖾𝗋 !! 
+        photo=f"https://telegra.ph/file/5dbe2622cc72985820ebd.jpg",
+        caption=f"""**𝖧𝖾𝗒𝗒 !! 𝖨'𝗆 𝖲𝗎𝗉𝖾𝗋𝖥𝖺𝗌𝗍 𝖯𝗅𝖺𝗒𝖾𝗋 𝖳𝗈 𝖯𝗅𝖺𝗒 𝖬𝗎𝗌𝗂𝖼 × 𝖵𝗂𝖽𝖾𝗈 𝖨𝗇 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 𝖵𝗈𝗂𝖼𝖾 𝖢𝗁𝖺𝗍.
 
-𝖨 𝖺𝗆 𝖲𝗎𝗉𝖾𝗋𝖥𝖺𝗌𝗍 𝖯𝗅𝖺𝗒𝖾𝗋 𝗍𝗈 𝗉𝗅𝖺𝗒 𝗆𝗎𝗌𝗂𝖼 × 𝗏𝗂𝖽𝖾𝗈 𝗈𝗇 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉𝗌 𝗏𝗈𝗂𝖼𝖾 𝖼𝗁𝖺𝗍.
-
-𝖥𝖾𝖾𝗅 𝖫𝖺𝗀 𝖥𝗋𝖾𝖾 𝖤𝗇𝗍𝖾𝗋𝗍𝖺𝗂𝗇𝗆𝖾𝗇𝗍 𝖨𝗇 𝘃𝗰.**""",
+𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 𝗖𝗙𝗖™**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -101,7 +99,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("📨 𝗦𝗎𝗉𝗉𝗈𝗋𝗍", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("𝗨𝗉𝖽𝖺𝗍𝖾𝗌 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("#𝐍𝐅𝐒 𝗢𝗐𝗇𝖾𝗋 シ︎", url="https://t.me/Its_romeoo")
+                    InlineKeyboardButton("𝗦𝗈𝗎𝗋𝖼𝖾 𝗖𝗈𝖽𝖾™", url="https://t.me/Its_romeoo")
                 ],
             ]
         ),
