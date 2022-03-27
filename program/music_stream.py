@@ -133,9 +133,9 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 photo=image,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 caption=f"💡 **Track added to queue »** `{pos}`\n\n"
-                        f"🗂 **Name:** [{songname}]({link}) | `music`\n"
-                        f"⏱️ **Duration:** `{duration}`\n"
-                        f"🧸 **Request by:** {requester}",
+                        f"🗂 **» Sᴏɴɢ :-** [{songname}]({link}) | `music`\n"
+                        f"⏱️ **» Tɪᴍᴇ :-** `{duration}`\n"
+                        f"🧸 **» Usᴇʀ :-** {requester}",
             )
             remove_if_exists(image)
         else:
@@ -165,9 +165,9 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 await m.reply_photo(
                     photo=image,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"🗂 **Name:** [{songname}]({link}) | `music`\n"
-                            f"⏱️ **Duration:** `{duration}`\n"
-                            f"🧸 **Request by:** {requester}",
+                    caption=f"🗂 **» Sᴏɴɢ :-** [{songname}]({link}) | `music`\n"
+                            f"⏱️ **» Tɪᴍᴇ :-** `{duration}`\n"
+                            f"🧸 **» Usᴇʀ :-** {requester}",
                 )
                 remove_if_exists(image)
             except (NoActiveGroupCall, GroupCallNotFound):
@@ -271,7 +271,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"💡 **Track added to queue »** `{pos}`\n\n🗂 **Name:** [{songname}]({url}) | `music`\n**⏱ Duration:** `{duration}`\n🧸 **Request by:** {requester}",
+                                caption=f"💡 **Track added to queue »** `{pos}`\n\n🗂 **» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n🧸 **» Usᴇʀ :-** {requester}",
                             )
                             remove_if_exists(image)
                         else:
@@ -346,7 +346,7 @@ async def audio_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"💡 **Track added to queue »** `{pos}`\n\n🗂 **Name:** [{songname}]({url}) | `music`\n**⏱ Duration:** `{duration}`\n🧸 **Request by:** {requester}",
+                            caption=f"💡 **Track added to queue »** `{pos}`\n\n🗂 **» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n🧸 **» Usᴇʀ :-** {requester}",
                         )
                         remove_if_exists(image)
                     else:
@@ -369,7 +369,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"🗂 **Name:** [{songname}]({url}) | `music`\n**⏱ Duration:** `{duration}`\n🧸 **Request by:** {requester}",
+                                caption=f"🗂 **» Sᴏɴɢ :-** [{songname}]({url}) | `music`\n**» Tɪᴍᴇ :-** `{duration}`\n🧸 **» Usᴇʀ :-** {requester}",
                             )
                             remove_if_exists(image)
                         except (NoActiveGroupCall, GroupCallNotFound):
@@ -456,7 +456,7 @@ async def live_music_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=f"{IMG_1}",
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"💡 **Track added to queue »** `{pos}`\n\n🗂 **Name:** [m3u8 audio stream]({url}) | `live`\n🧸 **Requested by:** {requester}",
+                        caption=f"💡 **Track added to queue »** `{pos}`\n\n🗂 **» Sᴏɴɢ :-** [m3u8 audio stream]({url}) | `live`\n**» Usᴇʀ :-** {requester}",
                     )
                 else:
                     try:
@@ -478,7 +478,7 @@ async def live_music_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMG_2}",
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"🗂 **Name:** [m3u8 audio stream]({url}) | `live`\n🧸 **Requested by:** {requester}",
+                            caption=f"**» Sᴏɴɢ :-** [m3u8 audio stream]({url}) | `live`\n**» Usᴇʀ :-** {requester}",
                         )
                     except (NoActiveGroupCall, GroupCallNotFound):
                         await msg.delete()
@@ -506,7 +506,7 @@ async def live_music_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=image,
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"💡 **Track added to queue »** `{pos}`\n\n🗂 **Name:** [{songname}]({url}) | `live`\n🧸 **Requested by:** {requester}",
+                        caption=f"💡 **Track added to queue »** `{pos}`\n\n **» Sᴏɴɢ :-** [{songname}]({url}) | `live`\n **» Usᴇʀ :-** {requester}",
                     )
                     remove_if_exists(image)
                 else:
@@ -529,7 +529,7 @@ async def live_music_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"🗂 **Name:** [{songname}]({url}) | `live`\n🧸 **Requested by:** {requester}",
+                            caption=f"**» Sᴏɴɢ :-** [{songname}]({url}) | `live`\n **» Usᴇʀ :-** {requester}",
                         )
                         remove_if_exists(image)
                     except (NoActiveGroupCall, GroupCallNotFound):
