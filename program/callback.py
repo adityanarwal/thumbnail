@@ -55,7 +55,7 @@ Use inline buttons given below to know more about me.**""",
                     InlineKeyboardButton(" ", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton(" ", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton(" ", url="https://t.me/Its_romeoo")
+                    InlineKeyboardButton(" ", url="https://t.me/{me_bot.username}?startgroup=true")
                 ],
             ]
         ),
