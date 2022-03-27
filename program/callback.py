@@ -48,10 +48,6 @@ Use inline buttons given below to know more about me.**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("❰𝗖𝗹𝗶𝗰𝗸 𝗛𝗲𝗿𝗲 𝗧𝗼 𝗔𝗱𝗱 𝗠𝗲❱", url=f"https://t.me/{me_bot.username}?startgroup=true")
-                ],[
-                    InlineKeyboardButton("❰𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀❱", callback_data="command_list"),
-                ],[
                     InlineKeyboardButton("Commands❓", callback_data="command_list"),
                     InlineKeyboardButton("About 💬", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
@@ -119,7 +115,7 @@ async def commands_set(_, query: CallbackQuery):
     user_id = query.from_user.id
     await query.answer("commands menu")
     await query.edit_message_text(
-        f"""✨ **𝗛𝗲𝗹𝗹𝗼 [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
+        f"""✨ **Heyy [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
 
 » Check out the menu below to read the module information & see the list of available Commands !
 """,
