@@ -151,8 +151,7 @@ async def user_set(_, query: CallbackQuery):
 » /repo - Get The Bot Repo !!
 » /search (query) - search for the youtube video link
 » /ping - show the bot ping status
-» /uptime - show the bot uptime status
-» /alive - show the bot alive info (in Group only)""",
+» /uptime - show the bot uptime status""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
         ),
