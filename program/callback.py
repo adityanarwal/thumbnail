@@ -49,7 +49,7 @@ Use inline buttons given below to know more about me.**""",
             [
                 [
                     InlineKeyboardButton("Commands❓", callback_data="command_list"),
-                    InlineKeyboardButton("About 💬", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("About 💬", callback_data="user_guide")
                 ],[
                     InlineKeyboardButton("✚ Add Me To Your Group ✚", url="https://t.me/{me_bot.username}?startgroup=true")
                 ],
