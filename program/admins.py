@@ -56,7 +56,7 @@ async def update_admin(client, message: Message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        "𝗕𝗈𝗍 𝗦𝖾𝗋𝗏𝖾𝗋 𝗥𝖾𝖿𝗋𝖾𝗌𝗁𝖾𝖽 𝗦𝗎𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 !! 𝗣𝗈𝗐𝖾𝗋𝖾𝖽 𝗕𝗒 #𝐍𝐅𝐒 𝙭𝘿 𝙎𝘦𝘳𝘷𝘦𝘳."
+        "» Bᴏᴛ Sᴇʀᴠᴇʀ Rᴇғʀᴇsʜᴇᴅ !!\n » Gʀᴏᴜᴘ Dᴀᴛᴀ Rᴇʟᴏᴀᴅᴇᴅ !!"
     )
 
 
