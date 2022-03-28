@@ -178,7 +178,7 @@ async def admin_set(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("sudo_command"))
+@Client.on_callback_query(filters.regex("extra_command"))
 @check_blacklist()
 async def sudo_set(_, query: CallbackQuery):
     user_id = query.from_user.id
@@ -199,7 +199,7 @@ async def sudo_set(_, query: CallbackQuery):
 » /eval - run an code
 » /sh - run an code""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
         ),
     )
 
