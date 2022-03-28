@@ -120,9 +120,8 @@ async def commands_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("𝗖𝗆𝖽𝗌 𝗙𝗈𝗋 𝗚𝗋𝗈𝗎𝗉 𝗔𝖽𝗆𝗂𝗇𝗌", callback_data="admin_command"),
-                ],[
-                    InlineKeyboardButton("𝗖𝗆𝖽𝗌 𝗙𝗈𝗋 𝗚𝗋𝗈𝗎𝗉 𝗠𝖾𝗆𝖻𝖾𝗋𝗌", callback_data="user_command"),
+                    InlineKeyboardButton("Voice Chat❓", callback_data="user_command"),
+                    InlineKeyboardButton("Controller❗️", callback_data="admin_command")
                 ],[
                     InlineKeyboardButton("🔙 𝗕ack 𝗛𝗈𝗆𝖾", callback_data="home_start")
                 ],
@@ -136,7 +135,7 @@ async def commands_set(_, query: CallbackQuery):
 async def user_set(_, query: CallbackQuery):
     await query.answer("basic commands")
     await query.edit_message_text(
-        f"""✨ 𝗖𝗺𝗱𝘀 𝗙𝗼𝗿 𝗚𝗿𝗼𝘂𝗽 𝗠𝗲𝗺𝗯𝗲𝗿𝘀.
+        f"""✨ Voice Chat Commands.
 
 » /play (song name/youtube link) - play the music from youtube
 » /stream (m3u8/youtube live link) - play youtube/m3u8 live stream music
@@ -163,7 +162,7 @@ async def user_set(_, query: CallbackQuery):
 async def admin_set(_, query: CallbackQuery):
     await query.answer("admin commands")
     await query.edit_message_text(
-        f"""✨ 𝗖𝗺𝗱𝘀 𝗙𝗼𝗿 𝗚𝗿𝗼𝘂𝗽 𝗔𝗱𝗺𝗶𝗻𝘀.
+        f"""⚠️ Only Group admins can use this commands.
 
 » /pause - pause the current track being played
 » /resume - play the previously paused track
@@ -172,9 +171,7 @@ async def admin_set(_, query: CallbackQuery):
 » /volume `1-200` - adjust the volume of music (userbot must be admin)
 » /refresh - refresh the bot server and refresh the admin data
 » /userbotjoin - invite the userbot to join group
-» /userbotleave - order userbot to leave from group
-» /startvc - start/restart the group call
-» /stopvc - stop/discard the group call""",
+» /userbotleave - order userbot to leave from group""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
         ),
