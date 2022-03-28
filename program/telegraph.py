@@ -134,7 +134,7 @@ async def _(event):
             ms = (end - start).seconds
             await event.edit("Pasted to https://telegra.ph/{} in {} seconds.".format(response["path"], ms), link_preview=False)
     else:
-        await event.edit("Reply to a message to get a permanent telegra.ph link. (Okay)")
+        await event.edit("Reply to a message to get a permanent telegra.ph link.")
 
 
 def resize_image(image):
