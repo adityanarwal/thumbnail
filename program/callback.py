@@ -64,17 +64,21 @@ Use the given buttons for more ❗️**""",
 async def quick_set(_, query: CallbackQuery):
     await query.answer("quick bot usage")
     await query.edit_message_text(
-        f"""ℹ️ Quick use Guide bot, please read fully !
+        f"""⚠️ Read Basic Guide Carefully !!
 
-👩🏻‍💼 » /play - Type this with give the song title or youtube link or audio file to play Music. (Remember to don't play YouTube live stream by using this command!, because it will cause unforeseen problems.)
+» First add this bot in your group
 
-👩🏻‍💼 » /vplay - Type this with give the song title or youtube link or video file to play Video. (Remember to don't play YouTube live video by using this command!, because it will cause unforeseen problems.)
+» Make a bot admin
 
-👩🏻‍💼 » /vstream - Type this with give the YouTube live stream video link or m3u8 link to play live Video. (Remember to don't play local audio/video files or non-live YouTube video by using this command!, because it will cause unforeseen problems.)
+» Give needed admin permission
 
-❓ Have questions? Contact us in [Support Group](https://t.me/{GROUP_SUPPORT}).""",
+» Type /reload in your group
+
+» Start your groups voice chat
+
+» Now play your song and enjoy !!""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="user_guide")]]
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="home_start")]]
         ),
         disable_web_page_preview=True,
     )
