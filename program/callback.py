@@ -135,7 +135,7 @@ async def commands_set(_, query: CallbackQuery):
 async def user_set(_, query: CallbackQuery):
     await query.answer("basic commands")
     await query.edit_message_text(
-        f"""✨ Voice Chat Commands.
+        f"""⚠️ Voice Chat Commands.
 
 » /play (song name/youtube link) - play the music from youtube
 » /stream (m3u8/youtube live link) - play youtube/m3u8 live stream music
