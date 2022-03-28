@@ -38,18 +38,19 @@ from config import (
 @check_blacklist()
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
-    await query.edit_message_text(
-        f"""**Hello !! I am Izumi player to help group owner , admins and members with my super advance features, 
-For reporting any issues regarding me kindly report in my support chat so my developers can Fix me out for your needs.
-- - - - - - - - - - - - - - - - - - - - - - - 
-ᴘᴏᴡᴇʀᴇᴅ ʙʏ :- [𝗖𝗙𝗖](https://t.me/CloseFriendsCommunity)
-- - - - - - - - - - - - - - - - - - - - - - -
-Use inline buttons given below to know more about me.**""",
+    await query.message.reply_photo(
+        photo=f"https://telegra.ph/file/50c77a56c2489872836dc.jpg",
+        caption=f"""**Welcome - {message.from_user.mention()} 👋
+This is the Broken music bot, a bot for playing high quality and unbreakable music in your groups voice chat.
+Just add me to your group and make a admin with needed admin permission to perform a right actions !!
+Use the given buttons for more ❗️**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("Commands❓", callback_data="command_list"),
-                    InlineKeyboardButton("About 💬", callback_data="user_guide")
+                    InlineKeyboardButton("About❕", callback_data="user_guide")
+                ],[
+                    InlineKeyboardButton("Basic Guide❔", callback_data=" ")
                 ],[
                     InlineKeyboardButton("✚ Add Me To Your Group ✚", url="https://t.me/{me_bot.username}?startgroup=true")
                 ],
