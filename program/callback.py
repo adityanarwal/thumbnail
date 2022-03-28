@@ -145,6 +145,7 @@ async def user_set(_, query: CallbackQuery):
 » /song (query) - download song from YouTube
 » /video (query) - download video from YouTube
 » /repo - Get The Bot Repo !!
+» /speedtest - run the bot server speedtest
 » /search (query) - search for the youtube video link
 » /ping - show the bot ping status
 » /uptime - show the bot uptime status""",
@@ -193,7 +194,6 @@ async def sudo_set(_, query: CallbackQuery):
 » /block (`chat_id`) - use this to blacklist any group from using your bot
 » /unblock (`chat_id`) - use this to whitelist any group from using your bot
 » /blocklist - show you the list of all blacklisted chat
-» /speedtest - run the bot server speedtest
 » /sysinfo - show the system information
 » /logs - generate the current bot logs
 » /eval - run an code
