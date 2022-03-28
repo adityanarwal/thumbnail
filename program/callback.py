@@ -140,7 +140,9 @@ async def user_set(_, query: CallbackQuery):
         f"""⚠️ Voice Chat Commands.
 
 » /play (song name/youtube link) - play the music from youtube
+» /vplay (video name/youtube link) - play the video from youtube
 » /stream (m3u8/youtube live link) - play youtube/m3u8 live stream music
+» /vstream (youtube live link) - play youtube/m3u8 live stream video
 » /playlist - view the queue list of songs and current playing song
 » /lyric (query) - search for song lyrics based on the name of the song
 » /song (query) - download song from YouTube
