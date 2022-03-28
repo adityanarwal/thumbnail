@@ -145,6 +145,7 @@ async def user_set(_, query: CallbackQuery):
 » /song (query) - download song from YouTube
 » /video (query) - download video from YouTube
 » /repo - Get The Bot Repo !!
+» /zombies - Ban Deleted Accounts From the Group
 » /tm - Generate the Telegraph link of media
 » /tt - Generate the Telegraph link of text
 » /speedtest - run the bot server speedtest
