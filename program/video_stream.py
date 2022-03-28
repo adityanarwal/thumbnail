@@ -105,9 +105,9 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         )
     if replied.video or replied.document:
         if not link:
-            loser = await replied.reply("📥 downloading video...")
+            loser = await replied.reply("~ Downloading 📥 Video....")
         else:
-            loser = await m.reply("📥 downloading video...")
+            loser = await m.reply("~ Downloading 📥 Video....")
         dl = await replied.download()
         link = replied.link
         songname = "video"
