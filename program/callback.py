@@ -176,7 +176,7 @@ async def admin_set(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("extra_command"))
 @check_blacklist()
-async def sudo_set(_, query: CallbackQuery):
+async def extra_set(_, query: CallbackQuery):
     await query.answer("extra commands")
     await query.edit_message_text(
         f"""⚠️ Extra Commands List.
