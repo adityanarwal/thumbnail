@@ -122,7 +122,7 @@ async def alive(c: Client, message: Message):
             ]
         ]
     )
-    text = f"**I'm Powerful Player with Other Super Cool Features, Powered By CFC\n\n👾 Bot Version: `v{__version__}`\n🔥 Pyrogram Version: `{pyrover}`\n🐍 Python Version: `{__python_version__}`\n✨ PyTgCalls Version: `{pytover.__version__}`\n🆙 Uptime Status: `{uptime}`**"
+    text = f"**• Bot : `v{__version__}`\n• Pyrogram : `{pyrover}`\n• Python : `{__python_version__}`\n• PyTgCalls : `{pytover.__version__}`\n• Uptime : `{uptime}`**"
     await c.send_photo(
         chat_id,
         photo=f"https://telegra.ph/file/dbb2371fd19b61404e340.jpg",
@@ -137,7 +137,7 @@ async def ping_pong(c: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("pinging...")
     delta_ping = time() - start
-    await m_reply.edit_text("~ I am Alive !!\n"  f"𝖬𝗒 𝖧𝖾𝖺𝗋𝗍𝖡𝖾𝖺𝗍 `{delta_ping * 1000:.3f} 𝙱𝙿𝚂`")
+    await m_reply.edit_text("Server Connection Speed :-\n"  f"`{delta_ping * 1000:.3f} ms`")
 
 
 @Client.on_message(command(["uptime", f"uptime@{BOT_USERNAME}"]) & ~filters.edited)
