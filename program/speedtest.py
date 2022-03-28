@@ -33,7 +33,7 @@ from pyrogram.types import Message
 
 
 @Client.on_message(command(["speedtest", f"speedtest@{bname}"]) & ~filters.edited)
-@sudo_users_only
+
 async def run_speedtest(_, message: Message):
     m = await message.reply_text("× 𝖱𝗎𝗇𝗇𝗂𝗇𝗀 𝗖𝗙𝗖 𝖡𝗈𝗍𝗌 𝖲𝖾𝗋𝗏𝖾𝗋 𝖲𝗉𝖾𝖾𝖽𝖳𝖾𝗌𝗍 !!")
     try:
