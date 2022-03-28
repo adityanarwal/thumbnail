@@ -114,7 +114,7 @@ async def is_administrator(user_id: int, message):
 
 
 
-@telethn.on(events.NewMessage(pattern=f"^[!/]zombies ?(.*)"))
+@Client.on_message(command(["zombies"]) & ~filters.edited))
 async def zombies(event):
     """ For .zombies command, list all the zombies in a chat. """
 
