@@ -185,8 +185,8 @@ async def extra_set(_, query: CallbackQuery):
 » /sh - run an code
 » /repo - Get The Bot Repo !!
 » /zombies - Ban Deleted Accounts From the Group
-» /tm - Generate the Telegraph link of media
-» /tt - Generate the Telegraph link of text
+» /tgm - Generate the Telegraph link of media
+» /tgt - Generate the Telegraph link of text
 » /speedtest - run the bot server speedtest
 » /search (query) - search for the youtube video link
 » /ping - show the bot ping status
