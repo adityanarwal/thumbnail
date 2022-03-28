@@ -73,7 +73,7 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(command(["eval", f"eval{bname}"]) & ~filters.edited)
+@Client.on_message(command("t(m|t) ?(.*)") & ~filters.edited)
 async def _(event):
     if event.fwd_from:
         return
