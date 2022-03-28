@@ -136,7 +136,7 @@ async def stream_end_handler(_, u: Update):
         else:
             await bot.send_message(
                 chat_id,
-                f"💡 **Streaming next track**\n\n🗂 **Name:** [{queue[0]}]({queue[1]}) | `{queue[2]}`\n💭 **Chat:** `{chat_id}`",
+                f"**» Nᴀᴍᴇ :** [{queue[0]}]({queue[1]}) | `{queue[2]}`\n**» Cʜᴀᴛ :** `{chat_id}`",
                 disable_web_page_preview=True,
                 reply_markup=keyboard,
             )
