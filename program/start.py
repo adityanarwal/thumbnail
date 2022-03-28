@@ -83,13 +83,15 @@ async def _human_time_duration(seconds):
 async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
-    await message.reply_text(
-        f"""**Hello !! I am Izumi player to help group owner , admins and members with my super advance features, 
-For reporting any issues regarding me kindly report in my support chat so my developers can Fix me out for your needs.
-- - - - - - - - - - - - - - - - - - - - - - - 
-ᴘᴏᴡᴇʀᴇᴅ ʙʏ :- [𝗖𝗙𝗖](https://t.me/CloseFriendsCommunity)
-- - - - - - - - - - - - - - - - - - - - - - -
-Use inline buttons given below to know more about me.**""",
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/50c77a56c2489872836dc.jpg",
+        caption=f"""**Welcome - {message.from_user.mention()} 👋
+
+This is the Broken music bot, a bot for playing high quality and unbreakable music in your groups voice chat.
+
+Just add me to your group and make a admin with needed admin permission to perform a right actions !!
+
+Use the given buttons for more ❗️**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
