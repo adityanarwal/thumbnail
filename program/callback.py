@@ -84,6 +84,23 @@ async def quick_set(_, query: CallbackQuery):
     )
 
 
+@Client.on_callback_query(filters.regex("common_error"))
+@check_blacklist()
+async def common_set(_, query: CallbackQuery):
+    await query.answer("quick bot usage")
+    await query.edit_message_text(
+        f"""Mostly Faced Errors ⚠️
+
+There wiil be the main error about to music assistant. If you are facing any type of error in your group then that time first make sure @BrokenxMusicAssistant is available in your group. If not then add it manually and before that make sure also it is not banned in ur chat.
+
+Thanks !!""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="quick_use")]]
+        ),
+        disable_web_page_preview=True,
+    )
+
+
 @Client.on_callback_query(filters.regex("user_guide"))
 @check_blacklist()
 async def guide_set(_, query: CallbackQuery):
