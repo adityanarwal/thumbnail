@@ -103,6 +103,34 @@ Use inline buttons given below to know more about me.**""",
     )
 
 
+@Client.on_message(
+    command(["alive", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+)
+@check_blacklist()
+async def alive(c: Client, message: Message):
+    chat_id = message.chat.id
+    current_time = datetime.utcnow()
+    uptime_sec = (current_time - START_TIME).total_seconds()
+    uptime = await _human_time_duration(int(uptime_sec))
+    buttons = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("✨ Group", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton(
+                    "📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                ),
+            ]
+        ]
+    )
+    text = f"**Hello {message.from_user.mention()}, I'm {me_bot.first_name}**\n\n🧑🏼‍💻 My Master: [{ALIVE_NAME}](https://t.me/{OWNER_USERNAME})\n👾 Bot Version: `v{__version__}`\n🔥 Pyrogram Version: `{pyrover}`\n🐍 Python Version: `{__python_version__}`\n✨ PyTgCalls Version: `{pytover.__version__}`\n🆙 Uptime Status: `{uptime}`\n\n❤ **Thanks for Adding me here, for playing video & music on your Group's video chat**"
+    await c.send_photo(
+        chat_id,
+        photo=f"{ALIVE_IMG}",
+        caption=text,
+        reply_markup=buttons,
+    )
+
+
 @Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 @check_blacklist()
 async def ping_pong(c: Client, message: Message):
