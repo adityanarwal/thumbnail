@@ -52,7 +52,6 @@ async def edit_or_reply(msg: Message, **kwargs):
 
 
 @Client.on_message(command(["eval", f"eval{bname}"]) & ~filters.edited)
-@sudo_users_only
 async def executor(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="» Give a command to execute")
@@ -128,7 +127,6 @@ async def runtime_func_cq(_, cq):
 
 
 @Client.on_message(command(["sh", f"sh{bname}"]) & ~filters.edited)
-@sudo_users_only
 async def shellrunner(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="**usage:**\n\n» /sh echo hello world")
