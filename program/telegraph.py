@@ -142,9 +142,4 @@ def resize_image(image):
     im.save(image, "PNG")
 
     
-CMD_HELP.update(
-    {
-        "telegraph": ".t(m/t)"
-        "\nUsage .tm Give Telegraph Link of media nd .tt telegraph link of text ."
-    }
 )
