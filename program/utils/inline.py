@@ -51,7 +51,7 @@ back_mark = InlineKeyboardMarkup(
   [
     [
       InlineKeyboardButton(
-        "🔙 Go Back", callback_data="stream_menu_panel"
+        "• Gᴏ Bᴀᴄᴋ", callback_data="stream_menu_panel"
       )
     ]
   ]
