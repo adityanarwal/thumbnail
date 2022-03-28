@@ -183,23 +183,20 @@ async def admin_set(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("extra_command"))
 @check_blacklist()
 async def sudo_set(_, query: CallbackQuery):
-    user_id = query.from_user.id
-    if user_id not in SUDO_USERS:
-        await query.answer("⚠️ You don't have permissions to click this button\n\n» This button is reserved for sudo members of this bot.", show_alert=True)
-        return
-    await query.answer("sudo commands")
+    await query.answer("extra commands")
     await query.edit_message_text(
-        f"""✏️ Command list for sudo user.
+        f"""⚠️ Extra Commands List.
 
-» /stats - get the bot current statistic
-» /calls - show you the list of all active group call in database
-» /block (`chat_id`) - use this to blacklist any group from using your bot
-» /unblock (`chat_id`) - use this to whitelist any group from using your bot
-» /blocklist - show you the list of all blacklisted chat
-» /sysinfo - show the system information
-» /logs - generate the current bot logs
 » /eval - run an code
-» /sh - run an code""",
+» /sh - run an code
+» /repo - Get The Bot Repo !!
+» /zombies - Ban Deleted Accounts From the Group
+» /tm - Generate the Telegraph link of media
+» /tt - Generate the Telegraph link of text
+» /speedtest - run the bot server speedtest
+» /search (query) - search for the youtube video link
+» /ping - show the bot ping status
+» /uptime - show the bot uptime status""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
         ),
