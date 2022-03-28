@@ -78,7 +78,13 @@ async def basic_set(_, query: CallbackQuery):
 
 » Now play your song and enjoy !!""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="home_start")]]
+            [    
+                [
+                    InlineKeyboardButton("About Error ×", callback_data="common_error")
+                ],[
+                    InlineKeyboardButton("🔙 Back Home", callback_data="home_start")
+                  ]
+            ]
         ),
         disable_web_page_preview=True,
     )
