@@ -393,7 +393,7 @@ async def video_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({url})\n⏱ **» Tɪᴍᴇ :** `{duration}`\n**» Usᴇʀ :** {requester}",
+                                caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({url})\n**» Tɪᴍᴇ :** `{duration}`\n**» Usᴇʀ :** {requester}",
                             )
                             remove_if_exists(image)
                         except (NoActiveGroupCall, GroupCallNotFound):
