@@ -123,6 +123,8 @@ async def commands_set(_, query: CallbackQuery):
                     InlineKeyboardButton("Voice Chat❓", callback_data="user_command"),
                     InlineKeyboardButton("Controller❗️", callback_data="admin_command")
                 ],[
+                    InlineKeyboardButton("Extra 🕹", callback_data="extra_command")
+                ],[
                     InlineKeyboardButton("🔙 𝗕ack 𝗛𝗈𝗆𝖾", callback_data="home_start")
                 ],
             ]
