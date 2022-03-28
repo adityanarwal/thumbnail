@@ -50,7 +50,7 @@ Use the given buttons for more ❗️**""",
                     InlineKeyboardButton("Commands❓", callback_data="command_list"),
                     InlineKeyboardButton("About❕", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton("Basic Guide❔", callback_data=" ")
+                    InlineKeyboardButton("Basic Guide❔", callback_data="basic_guide")
                 ],[
                     InlineKeyboardButton("✚ Add Me To Your Group ✚", url="https://t.me/{me_bot.username}?startgroup=true")
                 ],
@@ -59,9 +59,9 @@ Use the given buttons for more ❗️**""",
     )
 
 
-@Client.on_callback_query(filters.regex("quick_use"))
+@Client.on_callback_query(filters.regex("basic_guide"))
 @check_blacklist()
-async def quick_set(_, query: CallbackQuery):
+async def basic_set(_, query: CallbackQuery):
     await query.answer("quick bot usage")
     await query.edit_message_text(
         f"""⚠️ Read Basic Guide Carefully !!
@@ -95,7 +95,7 @@ There wiil be the main error about to music assistant. If you are facing any typ
 
 Thanks !!""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="quick_use")]]
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="basic_guide")]]
         ),
         disable_web_page_preview=True,
     )
