@@ -184,7 +184,7 @@ async def extra_set(_, query: CallbackQuery):
 » /eval - run an code
 » /sh - run an code
 » /repo - Get The Bot Repo !!
-» /zombies - Ban Deleted Accounts From the Group
+» 
 » /tgm - Generate the Telegraph link of media
 » /tgt - Generate the Telegraph link of text
 » /speedtest - run the bot server speedtest
