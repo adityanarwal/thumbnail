@@ -115,7 +115,7 @@ async def alive(c: Client, message: Message):
     buttons = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("⚙️ Support", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("📢 Support", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
                     "Updates 📡", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
@@ -125,7 +125,7 @@ async def alive(c: Client, message: Message):
     text = f"**• Bot : `v{__version__}`\n• Pyrogram : `{pyrover}`\n• Python : `{__python_version__}`\n• PyTgCalls : `{pytover.__version__}`\n• Uptime : `{uptime}`**"
     await c.send_photo(
         chat_id,
-        photo=f"https://telegra.ph/file/dbb2371fd19b61404e340.jpg",
+        photo=f"https://telegra.ph/file/729082d25f6092cd51ef6.jpg",
         caption=text,
         reply_markup=buttons,
     )
