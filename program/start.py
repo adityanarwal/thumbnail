@@ -96,7 +96,9 @@ Use the given buttons for more ❗️**""",
             [
                 [
                     InlineKeyboardButton("Commands❓", callback_data="command_list"),
-                    InlineKeyboardButton("About 💬", callback_data="user_guide")
+                    InlineKeyboardButton("About❕", callback_data="user_guide")
+                ],[
+                    InlineKeyboardButton("Basic Guide❔", callback_data=" ")
                 ],[
                     InlineKeyboardButton("✚ Add Me To Your Group ✚", url="https://t.me/{me_bot.username}?startgroup=true")
                 ],
