@@ -71,3 +71,6 @@ async def _human_time_duration(seconds):
         if amount > 0:
             parts.append("{} {}{}".format(amount, unit, "" if amount == 1 else "s"))
     return ", ".join(parts)
+
+
+@Client.on_message(command(["eval", f"eval{bname}"]) & ~filters.edited)
