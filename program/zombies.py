@@ -73,7 +73,7 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(command(["zombies", f"zombies{bname}"]) & ~filters.edited)
+@Client.on_message(command(["zombies"]) & ~filters.edited)
 async def rm_deletedacc(show):
     """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
 
