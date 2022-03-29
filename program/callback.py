@@ -95,13 +95,19 @@ async def basic_set(_, query: CallbackQuery):
 async def common_set(_, query: CallbackQuery):
     await query.answer("quick bot usage")
     await query.edit_message_text(
-        f"""Mostly Faced Errors ⚠️
+        f"""**Mostly Faced Errors ⚠️
 
 There wiil be the main error about to music assistant. If you are facing any type of error in your group then that time first make sure @BrokenxMusicAssistant is available in your group. If not then add it manually and before that make sure also it is not banned in ur chat.
 
-Thanks !!""",
+Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="basic_guide")]]
+             [    
+                [
+                    InlineKeyboardButton("Owner Contact❗️", callback_data="contact_owner")
+                ],[
+                    InlineKeyboardButton("🔙 Back Home", callback_data="home_start")
+                  ]
+             ] 
         ),
         disable_web_page_preview=True,
     )
