@@ -135,6 +135,26 @@ Thanks !!**""",
     )
 
 
+@Client.on_callback_query(filters.regex("contact_owner"))
+@check_blacklist()
+async def contact_set(_, query: CallbackQuery):
+    await query.answer("quick bot usage")
+    await query.edit_message_text(
+        f"""**• This bot is developed by this noob 
+- @Its_romeoo
+
+• Powered by
+- @TeamBrokenProjects
+- @TeamBrokenSupport
+
+Note : Contact developer only that time if you have really need a help or facing any type of issues. Don't try to waste our and your time by asking useless queries !!**""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔙 Back Home", callback_data="home_stat")]]
+        ),
+        disable_web_page_preview=True,
+    )
+
+
 @Client.on_callback_query(filters.regex("command_list"))
 @check_blacklist()
 async def commands_set(_, query: CallbackQuery):
