@@ -317,7 +317,7 @@ async def audio_stream(c: Client, m: Message):
                     await play_tg_file(c, m, link=i)
                 continue
         else:
-            suhu = await c.send_message(chat_id, "~ 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 🔎 𝖸𝗈𝗎𝗋 𝖲𝗈𝗇𝗀 !!")
+            suhu = await c.send_message(chat_id, "Processing....")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -337,7 +337,7 @@ async def audio_stream(c: Client, m: Message):
                     await suhu.edit(f"Y-T DL issue Detected❗️")
                 else:
                     if chat_id in QUEUE:
-                        await suhu.edit("~ 𝖰𝗎𝖾𝗎𝗂𝗇𝗀 !! 𝗍𝗁𝖾 𝖲𝗈𝗇𝗀....")
+                        await suhu.edit("Queuing....")
                         pos = add_to_queue(chat_id, songname, ytlink, url, "music", 0)
                         await suhu.delete()
                         requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
