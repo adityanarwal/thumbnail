@@ -132,7 +132,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             await m.reply_photo(
                 photo=image,
                 reply_markup=InlineKeyboardMarkup(buttons),
-                caption=f"[{Song Information ⚠️}]({link})\n\n"
+                caption=f"[Song Information ⚠️]({link})\n\n"
                         f"**Duration :** `{duration}`\n"
                         f"**Bot User :** {requester}",
             )
@@ -164,7 +164,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 await m.reply_photo(
                     photo=image,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"[{Song Information ⚠️}]({link})\n\n"
+                    caption=f"[Song Information ⚠️]({link})\n\n"
                             f"**Duration :** `{duration}`\n"
                             f"**Bot User :** {requester}",
                 )
@@ -270,7 +270,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"[{Song Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
+                                caption=f"[Song Information ⚠️]({url})⚠\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                             )
                             remove_if_exists(image)
                         else:
@@ -295,7 +295,7 @@ async def audio_stream(c: Client, m: Message):
                                 await m.reply_photo(
                                     photo=image,
                                     reply_markup=InlineKeyboardMarkup(buttons),
-                                    caption=f"[{Song Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
+                                    caption=f"[Song Information ⚠️]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                                 )
                                 remove_if_exists(image)
                             except (NoActiveGroupCall, GroupCallNotFound):
@@ -345,7 +345,7 @@ async def audio_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"[{Song Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
+                            caption=f"[Song Information ⚠️]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                         )
                         remove_if_exists(image)
                     else:
@@ -368,7 +368,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"[{Song Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
+                                caption=f"[Song Information ⚠️]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                             )
                             remove_if_exists(image)
                         except (NoActiveGroupCall, GroupCallNotFound):
@@ -505,7 +505,7 @@ async def live_music_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=image,
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"[{Song Information ⚠️}]({url})\n\n**Bot User :** {requester}",
+                        caption=f"[Song Information ⚠️]({url})\n\n**Bot User :** {requester}",
                     )
                     remove_if_exists(image)
                 else:
@@ -528,7 +528,7 @@ async def live_music_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"[{Song Information ⚠️}]({url})\n\n**Bot User :** {requester}",
+                            caption=f"[Song Information ⚠️]({url})\n\n**Bot User :** {requester}",
                         )
                         remove_if_exists(image)
                     except (NoActiveGroupCall, GroupCallNotFound):
