@@ -101,7 +101,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             return await m.reply_text(f"× 404 Error ×")
     if not replied:
         return await m.reply(
-            "» reply to an **audio file** or **give something to search.**"
+            "Give Something To Play❗"
         )
     if replied.video or replied.document:
         if not link:
@@ -261,7 +261,7 @@ async def video_stream(c: Client, m: Message):
                 )
             else:
                 Q = 720
-                loser = await c.send_message(chat_id, "**~ Searching 🔎 Your Video**")
+                loser = await c.send_message(chat_id, "Processing....")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 amaze = HighQualityVideo()
@@ -460,13 +460,13 @@ async def live_video_stream(c: Client, m: Message):
                 f"Failed to play the Video❗️"
             )
     if len(m.command) < 2:
-        await m.reply("» Give me a youtube live url/m3u8 url to stream.")
+        await m.reply("» Give me a youtube live url/m3u8 url to stream❗")
     else:
         if len(m.command) == 2:
             Q = 720
             url = m.text.split(None, 1)[1]
             search = ytsearch(url)
-            loser = await c.send_message(chat_id, "**~ Searching 🔎 Your Video**")
+            loser = await c.send_message(chat_id, "Processing....")
         elif len(m.command) == 3:
             op = m.text.split(None, 1)[1]
             url = op.split(None, 1)[0]
@@ -576,7 +576,7 @@ async def live_video_stream(c: Client, m: Message):
                     elif Q == 360:
                         amaze = LowQualityVideo()
                     try:
-                        await loser.edit("🔄 Joining Group Call...")
+                        await loser.edit("Connecting....")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
