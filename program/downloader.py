@@ -39,7 +39,7 @@ from driver.utils import remove_if_exists
 async def song_downloader(_, message):
     await message.delete()
     query = " ".join(message.command[1:])
-    m = await message.reply("» 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 🔎 𝖸𝗈𝗎𝗋 𝖲𝗈𝗇𝗀 !! ")
+    m = await message.reply("Processing....")
     ydl_ops = {
         'format': 'bestaudio[ext=m4a]',
         'geo-bypass': True,
@@ -64,7 +64,7 @@ async def song_downloader(_, message):
         await m.edit("× 𝐄𝐫𝐨𝐫 404 - 𝖲𝗈𝗇𝗀 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 !!")
         print(str(e))
         return
-    await m.edit("~ 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽𝗂𝗇𝗀 📥 𝖸𝗈𝗎𝗋 𝖲𝗈𝗇𝗀 !!")
+    await m.edit("Processing....")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -76,7 +76,7 @@ async def song_downloader(_, message):
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        await m.edit("~ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀 📤 𝖸𝗈𝗎𝗋 𝖲𝗈𝗇𝗀 !!")
+        await m.edit("Uploading....")
         await message.reply_audio(
             audio_file,
             caption=rep,
@@ -89,7 +89,7 @@ async def song_downloader(_, message):
         await m.delete()
 
     except Exception as e:
-        await m.edit("× 404 !! 𝐄𝐫𝐨𝐫 ×")
+        await m.edit("× 404 !! Error ×")
         print(e)
     try:
         remove_if_exists(audio_file)
@@ -130,15 +130,15 @@ async def video_downloader(_, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("~ 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽𝗂𝗇𝗀 📥 𝖸𝗈𝗎𝗋 𝖵𝗂𝖽𝖾𝗈 !!")
+        msg = await message.reply("Processing....")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
         traceback.print_exc()
-        return await msg.edit(f"× 404 !! 𝐄𝐫𝐨𝐫 ×")
+        return await msg.edit(f"× 404 !! Error ×")
     preview = wget.download(thumbnail)
-    await msg.edit("~ 𝖴𝗉𝗅𝗈𝖺𝖽𝗂𝗇𝗀 📤 𝖸𝗈𝗎𝗋 𝖵𝗂𝖽𝖾𝗈 !!")
+    await msg.edit("Uploading....")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
@@ -157,14 +157,14 @@ async def video_downloader(_, message):
 async def get_lyric_genius(_, message: Message):
     if len(message.command) < 2:
         return await message.reply_text("**usage:**\n\n/lyrics (song name)")
-    m = await message.reply_text("🔍 Searching lyrics...")
+    m = await message.reply_text("Processing....")
     query = message.text.split(None, 1)[1]
     api = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
     data = lyricsgenius.Genius(api)
     data.verbose = False
     result = data.search_song(query, get_full_info=False)
     if result is None:
-        return await m.edit("× 𝐄𝐫𝐨𝐫 404 - 𝖫𝗒𝗋𝗂𝖼𝗌 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 !!")
+        return await m.edit("No results found❗")
     xxx = f"""
 **Title song:** {query}
 **Artist name:** {result.artist}
