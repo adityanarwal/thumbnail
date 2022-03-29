@@ -132,7 +132,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             songname = "video"
 
         if chat_id in QUEUE:
-            await loser.edit("~ Queueing Video...")
+            await loser.edit("Queueing Video...")
             gcname = m.chat.title
             ctitle = await CHAT_TITLE(gcname)
             title = songname
@@ -282,7 +282,7 @@ async def video_stream(c: Client, m: Message):
                         await loser.edit(f"Y-T DL issue Detected❗️")
                     else:
                         if chat_id in QUEUE:
-                            await loser.edit("~ Queueing Video...")
+                            await loser.edit("Queueing Video...")
                             pos = add_to_queue(chat_id, songname, ytlink, url, "video", Q)
                             await loser.delete()
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -361,7 +361,7 @@ async def video_stream(c: Client, m: Message):
                     await loser.edit("Y-T DL issue Detected❗️")
                 else:
                     if chat_id in QUEUE:
-                        await loser.edit("~ Queueing Video....")
+                        await loser.edit("Queueing Video....")
                         pos = add_to_queue(chat_id, songname, ytlink, url, "video", Q)
                         await loser.delete()
                         requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -374,7 +374,7 @@ async def video_stream(c: Client, m: Message):
                         remove_if_exists(image)
                     else:
                         try:
-                            await loser.edit("~ Connecting !! To The Server....")
+                            await loser.edit("Connecting....")
                             await music_on(chat_id)
                             await add_active_chat(chat_id)
                             await calls.join_group_call(
