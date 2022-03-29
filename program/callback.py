@@ -127,7 +127,7 @@ Thanks !!**""",
             [
                 [
                     InlineKeyboardButton("Make your own Bot 🤖", callback_data="own_bot"),
-                    InlineKeyboardButton("Assistant 🧑‍💻", url=f" ")
+                    InlineKeyboardButton("Assistant 🧑‍💻", url=f"https://t.me/BrokenxMusicAssistant")
                 ],[
                     InlineKeyboardButton("🔙 Back Home", callback_data="home_start")
                 ]
