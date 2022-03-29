@@ -35,20 +35,20 @@ from pyrogram.types import Message
 @Client.on_message(command(["speedtest", f"speedtest@{bname}"]) & ~filters.edited)
 
 async def run_speedtest(_, message: Message):
-    m = await message.reply_text("× 𝖱𝗎𝗇𝗇𝗂𝗇𝗀 𝗖𝗙𝗖 𝖡𝗈𝗍𝗌 𝖲𝖾𝗋𝗏𝖾𝗋 𝖲𝗉𝖾𝖾𝖽𝖳𝖾𝗌𝗍 !!")
+    m = await message.reply_text("Running Speed Test !!")
     try:
         test = speedtest.Speedtest()
         test.get_best_server()
-        m = await m.edit("× 𝖣𝗈𝗐𝗇𝖫𝗈𝖺𝖽 𝖲𝗉𝖾𝖾𝖽 ⚡️")
+        m = await m.edit("Download Speed....")
         test.download()
-        m = await m.edit("× 𝖴𝗉𝖫𝗈𝖺𝖽 𝖲𝗉𝖾𝖾𝖽 ⚡️")
+        m = await m.edit("Upload Speed....")
         test.upload()
         test.results.share()
         result = test.results.dict()
     except Exception as e:
         await m.edit(e)
         return
-    m = await m.edit("» 𝖲𝗉𝖾𝖾𝖽𝖳𝖾𝗌𝗍 𝖱𝖾𝗌𝗎𝗅𝗍𝗌 𝖥𝗋𝗈𝗆 𝖳𝗁𝖾 𝗖𝗙𝗖 𝖲𝖾𝗋𝗏𝖾𝗋 !!")
+    m = await m.edit("Bot speed test results....")
     path = wget.download(result["share"])
     try:
         img = Image.open(path)
@@ -57,19 +57,19 @@ async def run_speedtest(_, message: Message):
     except BaseException:
         pass
 
-    output = f"""**» 𝗖𝗙𝗖 Bᴏᴛ Sᴇʀᴠᴇʀ Sᴘᴇᴇᴅ !!**
+    output = f"""**Bot Server Speed :-**
     
 <u>**Client:**</u>
-**• 𝙸𝚂𝙿 »** {result['client']['isp']}
-**• 𝙲𝚘𝚞𝚗𝚝𝚛𝚢 »** {result['client']['country']}
+**ISP -** {result['client']['isp']}
+**Country -** {result['client']['country']}
   
 <u>**Server:**</u>
-**• 𝙽𝚊𝚖𝚎 »** {result['server']['name']}
-**• 𝚂𝚎𝚛𝚟𝚎𝚛 »** {result['server']['country']}, {result['server']['cc']}
-**• 𝚂𝚙𝚘𝚗𝚜𝚘𝚛 »** {result['server']['sponsor']}
-**• 𝙻𝚎𝚝𝚎𝚗𝚌𝚢 »** {result['server']['latency']}
+**Name -** {result['server']['name']}
+**Server -** {result['server']['country']}, {result['server']['cc']}
+**Sponsor -** {result['server']['sponsor']}
+**Letency -** {result['server']['latency']}
 
-⚡️ **• 𝙿𝚒𝚗𝚐 »** {result['ping']}"""
+⚡️ **Ping -** {result['ping']}"""
     msg = await app.send_photo(
         chat_id=message.chat.id, photo=path, caption=output
     )
