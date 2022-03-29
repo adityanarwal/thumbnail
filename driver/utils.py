@@ -136,7 +136,7 @@ async def stream_end_handler(_, u: Update):
         else:
             await bot.send_message(
                 chat_id,
-                f"**[{Video Information ⚠️}]({queue[1]}) | `{queue[2]}`\n\n**Group Id :** `{chat_id}`",
+                f"**[Video Information ⚠️]({queue[1]}) | `{queue[2]}`\n\n**Group Id :** `{chat_id}`",
                 disable_web_page_preview=True,
                 reply_markup=keyboard,
             )
