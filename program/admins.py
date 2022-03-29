@@ -242,16 +242,16 @@ async def cbpause(_, query: CallbackQuery):
     if chat_id in QUEUE:
         try:
             if not await is_music_playing(chat_id):
-                await query.answer("ℹ️ The music is already paused.", show_alert=True)
+                await query.answer("The music is already paused❗", show_alert=True)
                 return
             await calls.pause_stream(chat_id)
             await music_off(chat_id)
-            await query.answer("~ 𝖬𝗎𝗌𝗂𝖼 ▶️ 𝖯𝖺𝗎𝗌𝖾𝖽 !!", show_alert=True)
+            await query.answer("Music Paused❗️", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! Error ×", reply_markup=close_mark)
     else:
-        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
+        await query.answer("Nothing is streaming in the vc❗️", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_resume"))
@@ -264,16 +264,16 @@ async def cbresume(_, query: CallbackQuery):
     if chat_id in QUEUE:
         try:
             if await is_music_playing(chat_id):
-                await query.answer("ℹ️ The music is already resumed.", show_alert=True)
+                await query.answer("The music is already resumed❗", show_alert=True)
                 return
             await calls.resume_stream(chat_id)
             await music_on(chat_id)
-            await query.answer("~ 𝖬𝗎𝗌𝗂𝖼 ⏸ 𝖱𝖾𝗌𝗎𝗆𝖾𝖽 !!", show_alert=True)
+            await query.answer("Music Resumed❗️", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! Error ×", reply_markup=close_mark)
     else:
-        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
+        await query.answer("Nothing is streaming in the vc❗️", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_stop"))
@@ -288,12 +288,12 @@ async def cbstop(_, query: CallbackQuery):
             await calls.leave_group_call(chat_id)
             await remove_active_chat(chat_id)
             clear_queue(chat_id)
-            await query.edit_message_text("× 𝖲𝗍𝗈𝗉 !! 𝖯𝗅𝖺𝗒𝗂𝗇𝗀 𝖬𝗎𝗌𝗂𝖼 🔇", reply_markup=close_mark)
+            await query.edit_message_text("Song has been Stopped❗️", reply_markup=close_mark)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! Error ×", reply_markup=close_mark)
     else:
-        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
+        await query.answer("Nothing is streaming in the vc❗️", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_mute"))
@@ -306,16 +306,16 @@ async def cbmute(_, query: CallbackQuery):
     if chat_id in QUEUE:
         try:
             if not await is_music_playing(chat_id):
-                await query.answer("ℹ️ The stream userbot is already muted.", show_alert=True)
+                await query.answer("The assistant is already muted❗", show_alert=True)
                 return
             await calls.mute_stream(chat_id)
             await music_off(chat_id)
-            await query.answer("🔇 The stream userbot has muted !\n\n» to unmute the userbot click on unmute button !", show_alert=True)
+            await query.answer("The assistant has been muted❗", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! Error ×", reply_markup=close_mark)
     else:
-        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
+        await query.answer("Nothing is streaming in the vc❗️", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_unmute"))
@@ -328,16 +328,16 @@ async def cbunmute(_, query: CallbackQuery):
     if chat_id in QUEUE:
         try:
             if await is_music_playing(chat_id):
-                await query.answer("ℹ️ The stream userbot is already unmuted.", show_alert=True)
+                await query.answer("The assistant is already unmuted❗", show_alert=True)
                 return
             await calls.unmute_stream(chat_id)
             await music_on(chat_id)
-            await query.answer("🔊 The stream userbot has unmuted !\n\n» to mute the userbot click on mute button !", show_alert=True)
+            await query.answer("The assistant has unmuted❗", show_alert=True)
         except Exception as e:
             traceback.print_exc()
-            await query.edit_message_text(f"× 404 !! 𝐄𝐫𝐨𝐫 ×", reply_markup=close_mark)
+            await query.edit_message_text(f"× 404 !! Error ×", reply_markup=close_mark)
     else:
-        await query.answer("× 𝐍𝗈𝗍𝗁𝗂𝗇𝗀 !! 𝐈𝗌 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀....", show_alert=True)
+        await query.answer("Nothing is streaming in the vc❗️", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("set_skip"))
@@ -352,9 +352,9 @@ async def cbskip(_, query: CallbackQuery):
     if queue == 0:
         await query.answer("Nothing is streaming in the vc❗️", show_alert=True)
     elif queue == 1:
-        await query.answer("» There's no more music in queue to skip, userbot leaving video chat.", show_alert=True)
+        await query.answer("There is no more music in queue to Skip❗", show_alert=True)
     elif queue == 2:
-        await query.answer("🗑️ Clearing the **queues**\n\n» **userbot** leaving video chat.", show_alert=True)
+        await query.answer("Clearing the queues❗", show_alert=True)
     else:
         await query.answer("goes to the next track, proccessing...")
         await query.message.delete()
@@ -370,6 +370,6 @@ async def cbskip(_, query: CallbackQuery):
             chat_id,
             photo=image,
             reply_markup=InlineKeyboardMarkup(buttons),
-            caption=f"**» Nᴀᴍᴇ :** [{queue[0]}]({queue[1]})\n**» Cʜᴀᴛ :** `{chat_id}`\n**» Usᴇʀ :** {requester}",
+            caption=f"[{Song Information ⚠️}]({queue[1]})\n\n**Group Id :** `{chat_id}`\n**Bot User :** {requester}",
         )
         remove_if_exists(image)
