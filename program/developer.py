@@ -54,7 +54,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 @Client.on_message(command(["eval", f"eval{bname}"]) & ~filters.edited)
 async def executor(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="» Give a command to execute")
+        return await edit_or_reply(message, text="Give a command to execute❗")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
@@ -129,7 +129,7 @@ async def runtime_func_cq(_, cq):
 @Client.on_message(command(["sh", f"sh{bname}"]) & ~filters.edited)
 async def shellrunner(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="**usage:**\n\n» /sh echo hello world")
+        return await edit_or_reply(message, text="**Usage :**\n\n/sh echo hello world")
     text = message.text.split(None, 1)[1]
     if "\n" in text:
         code = text.split("\n")
