@@ -98,16 +98,16 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             replied = await from_tg_get_msg(link)
         except Exception as e:
             LOGS.info(f"[ERROR]: {e}")
-            return await m.reply_text(f"🚫 error:\n\n» {e}")
+            return await m.reply_text(f"× 404 Error ×")
     if not replied:
         return await m.reply(
             "» reply to an **audio file** or **give something to search.**"
         )
     if replied.video or replied.document:
         if not link:
-            loser = await replied.reply("~ Downloading 📥 Video....")
+            loser = await replied.reply("Processing....")
         else:
-            loser = await m.reply("~ Downloading 📥 Video....")
+            loser = await m.reply("Processing....")
         dl = await replied.download()
         link = replied.link
         songname = "video"
@@ -146,14 +146,14 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             await m.reply_photo(
                 photo=image,
                 reply_markup=InlineKeyboardMarkup(buttons),
-                caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({link})\n"
-                        f"**» Tɪᴍᴇ :** `{duration}`\n"
-                        f"**» Usᴇʀ :** {requester}",
+                caption=f"[{Video Information ⚠️}]({link})\n\n"
+                        f"**Duration :** `{duration}`\n"
+                        f"**Bot User :** {requester}",
             )
             remove_if_exists(image)
         else:
             try:
-                await loser.edit("~ Connecting !! To The Server....")
+                await loser.edit("Connecting....")
                 gcname = m.chat.title
                 ctitle = await CHAT_TITLE(gcname)
                 title = songname
@@ -184,7 +184,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 await m.reply_photo(
                     photo=image,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"**[{Video Information ⚠️}]({link})\n"
+                    caption=f"**[{Video Information ⚠️}]({link})\n\n"
                             f"**Duration :** `{duration}`\n"
                             f"**Bot User :** {requester}",
                 )
@@ -192,12 +192,12 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             except (NoActiveGroupCall, GroupCallNotFound):
                 await loser.delete()
                 await remove_active_chat(chat_id)
-                await m.reply_text("❌ The bot can't find the Group call or it's inactive.\n\n» Use /startvc command to turn on the Group call !")
+                await m.reply_text("Bot can't able to join the voice chat❗️")
             except Exception as e:
                 LOGS.info(f"[ERROR]: {e}")
     else:
         await m.reply_text(
-            "» reply to an **video file** or **give something to search.**"
+            "Give Something To Play❗"
         )
 
 
@@ -211,14 +211,14 @@ async def video_stream(c: Client, m: Message):
     user_id = m.from_user.id
     if m.sender_chat:
         return await m.reply_text(
-            "you're an __Anonymous__ user !\n\n» revert back to your real user account to use this bot."
+            "You are restricted to use me❗️"
         )
     try:
         ubot = me_user.id
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "banned":
             try:
-                await m.reply_text("❌ The userbot is banned in this chat, unban the userbot first to be able to play music !")
+                await m.reply_text("My Assistant is banned in this Group. Unban the assistant first❗️")
                 await remove_active_chat(chat_id)
             except BaseException:
                 pass
@@ -249,7 +249,7 @@ async def video_stream(c: Client, m: Message):
         except Exception as e:
             LOGS.info(f"[ERROR]: {e}")
             return await m.reply_text(
-                f"❌ **userbot failed to join**\n\n**reason**: `{e}`"
+                f"Failed to play the Video❗️"
             )
     if replied:
         if replied.video or replied.document:
@@ -257,7 +257,7 @@ async def video_stream(c: Client, m: Message):
         else:
             if len(m.command) < 2:
                 await m.reply(
-                    "» reply to an **video file** or **give something to search.**"
+                    "Give something to Play❗"
                 )
             else:
                 Q = 720
@@ -266,7 +266,7 @@ async def video_stream(c: Client, m: Message):
                 search = ytsearch(query)
                 amaze = HighQualityVideo()
                 if search == 0:
-                    await loser.edit("❌ **no results found**")
+                    await loser.edit("No results found❗")
                 else:
                     songname = search[0]
                     title = search[0]
@@ -279,7 +279,7 @@ async def video_stream(c: Client, m: Message):
                     image = await thumb(thumbnail, title, userid, ctitle)
                     data, ytlink = await ytdl(url)
                     if data == 0:
-                        await loser.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")
+                        await loser.edit(f"Y-T DL issue Detected❗️")
                     else:
                         if chat_id in QUEUE:
                             await loser.edit("~ Queueing Video...")
@@ -290,12 +290,12 @@ async def video_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"*» Vɪᴅᴇᴏ :** [{songname}]({url})\n**» Tɪᴍᴇ :** `{duration}`\n**» Usᴇʀ :** {requester}",
+                                caption=f"[{Video Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                             )
                             remove_if_exists(image)
                         else:
                             try:
-                                await loser.edit("~ Connecting !! To The Server....")
+                                await loser.edit("Connecting....")
                                 await music_on(chat_id)
                                 await add_active_chat(chat_id)
                                 await calls.join_group_call(
@@ -314,25 +314,25 @@ async def video_stream(c: Client, m: Message):
                                 await m.reply_photo(
                                     photo=image,
                                     reply_markup=InlineKeyboardMarkup(buttons),
-                                    caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({url})\n**» Tɪᴍᴇ :** `{duration}`\n**» Usᴇʀ :** {requester}",
+                                    caption=f"[{Video Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                                 )
                                 remove_if_exists(image)
                             except (NoActiveGroupCall, GroupCallNotFound):
                                 await loser.delete()
                                 await remove_active_chat(chat_id)
-                                await m.reply_text("❌ The bot can't find the Group call or it's inactive.")
+                                await m.reply_text("Bot can't able to join the voice chat❗")
                             except NoVideoSourceFound:
                                 await loser.delete()
                                 await remove_active_chat(chat_id)
-                                await m.reply_text("❌ The content you provide to play has no video source")
+                                await m.reply_text("The content you provide to play has no video source❗")
                             except NoAudioSourceFound:
                                 await loser.delete()
                                 await remove_active_chat(chat_id)
-                                await m.reply_text("❌ The content you provide to play has no audio source")
+                                await m.reply_text("The content you provide to play has no audio source❗")
 
     else:
         if len(m.command) < 2:
-            await m.reply_text("» reply to an **video file** or **give something to search.**")
+            await m.reply_text("Give Something To Play❗")
         elif "t.me" in m.command[1]:
             for i in m.command[1:]:
                 if "t.me" in i:
@@ -340,12 +340,12 @@ async def video_stream(c: Client, m: Message):
                 continue
         else:
             Q = 720
-            loser = await c.send_message(chat_id, "🔍 **Loading...**")
+            loser = await c.send_message(chat_id, "Processing....")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             amaze = HighQualityVideo()
             if search == 0:
-                await loser.edit("❌ **no results found**")
+                await loser.edit("No results found❗")
             else:
                 songname = search[0]
                 title = search[0]
@@ -358,7 +358,7 @@ async def video_stream(c: Client, m: Message):
                 image = await thumb(thumbnail, title, userid, ctitle)
                 data, ytlink = await ytdl(url)
                 if data == 0:
-                    await loser.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")
+                    await loser.edit("Y-T DL issue Detected❗️")
                 else:
                     if chat_id in QUEUE:
                         await loser.edit("~ Queueing Video....")
@@ -393,21 +393,21 @@ async def video_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({url})\n**» Tɪᴍᴇ :** `{duration}`\n**» Usᴇʀ :** {requester}",
+                                caption=f"[{Video Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                             )
                             remove_if_exists(image)
                         except (NoActiveGroupCall, GroupCallNotFound):
                             await loser.delete()
                             await remove_active_chat(chat_id)
-                            await m.reply_text("❌ The bot can't find the Group call or it's inactive.\n\n» Use /startvc command to turn on the Group call !")
+                            await m.reply_text("Bot can't able to join the voice chat❗️")
                         except NoVideoSourceFound:
                             await loser.delete()
                             await remove_active_chat(chat_id)
-                            await m.reply_text("❌ The content you provide to play has no video source")
+                            await m.reply_text("The content you provide to play has no video source❗")
                         except NoAudioSourceFound:
                             await loser.delete()
                             await remove_active_chat(chat_id)
-                            await m.reply_text("❌ The content you provide to play has no audio source")
+                            await m.reply_text("The content you provide to play has no audio source❗")
 
 
 @Client.on_message(command(["vstream", f"vstream@{BOT_USERNAME}"]) & other_filters)
@@ -419,14 +419,14 @@ async def live_video_stream(c: Client, m: Message):
     user_id = m.from_user.id
     if m.sender_chat:
         return await m.reply_text(
-            "you're an __Anonymous__ user !\n\n» revert back to your real user account to use this bot."
+            "You are restricted to use me❗️"
         )
     try:
         ubot = me_user.id
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "banned":
             try:
-                await m.reply_text("❌ The userbot is banned in this chat, unban the userbot first to be able to play music !")
+                await m.reply_text("My Assistant is banned in this Group. Unban the assistant first❗️")
                 await remove_active_chat(chat_id)
             except BaseException:
                 pass
@@ -457,7 +457,7 @@ async def live_video_stream(c: Client, m: Message):
         except Exception as e:
             LOGS.info(f"[ERROR]: {e}")
             return await m.reply_text(
-                f"❌ **userbot failed to join**\n\n**reason**: `{e}`"
+                f"Failed to play the Video❗️"
             )
     if len(m.command) < 2:
         await m.reply("» Give me a youtube live url/m3u8 url to stream.")
@@ -479,7 +479,7 @@ async def live_video_stream(c: Client, m: Message):
                 await m.reply_text(
                     "» started streaming the live video in 720p quality"
                 )
-            loser = await c.send_message(chat_id, "**~ Searching 🔎 Your Video**")
+            loser = await c.send_message(chat_id, "Processing....")
         else:
             pass
 
@@ -491,7 +491,7 @@ async def live_video_stream(c: Client, m: Message):
             livelink = url
             coda = 1
         if coda == 0:
-            await loser.edit(f"❌ yt-dl issues detected\n\n» `{livelink}`")
+            await loser.edit(f"Y-T DL issue Detected❗️")
 
         else:
             if "m3u8" in url:
@@ -504,7 +504,7 @@ async def live_video_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=f"{IMG_1}",
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"**» Vɪᴅᴇᴏ :** [m3u8 video stream]({url})\n**» Usᴇʀ :** {requester}",
+                        caption=f"[Video Information ⚠️]({url})\n\n**Bot User :** {requester}",
                     )
                 else:
                     if Q == 720:
@@ -514,7 +514,7 @@ async def live_video_stream(c: Client, m: Message):
                     elif Q == 360:
                         amaze = LowQualityVideo
                     try:
-                        await loser.edit("🔄 Joining Group Call...")
+                        await loser.edit("Connecting....")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
@@ -533,20 +533,20 @@ async def live_video_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMG_2}",
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"**» Vɪᴅᴇᴏ :** [m3u8 video stream]({url})\n**» Usᴇʀ :** {requester}",
+                            caption=f"[Video Information ⚠️]({url})\n\n**Bot User :** {requester}",
                         )
                     except (NoActiveGroupCall, GroupCallNotFound):
                         await loser.delete()
                         await remove_active_chat(chat_id)
-                        await m.reply_text("❌ The bot can't find the Group call or it's inactive.\n\n» Use /startvc command to turn on the Group call !")
+                        await m.reply_text("Bot can't able to join the voice chat❗️")
                     except NoVideoSourceFound:
                         await loser.delete()
                         await remove_active_chat(chat_id)
-                        await m.reply_text("❌ The content you provide to play has no video source")
+                        await m.reply_text("The content you provide to play has no video❗")
                     except NoAudioSourceFound:
                         await loser.delete()
                         await remove_active_chat(chat_id)
-                        await m.reply_text("❌ The content you provide to play has no audio source")
+                        await m.reply_text("The content you provide to play has no audio❗️")
             else:
                 search = ytsearch(url)
                 title = search[0]
@@ -565,7 +565,7 @@ async def live_video_stream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=image,
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({url})\n**» Usᴇʀ :** {requester}",
+                        caption=f"[{Video Information ⚠️}]({url})\n\n**Bot User :** {requester}",
                     )
                     remove_if_exists(image)
                 else:
@@ -595,7 +595,7 @@ async def live_video_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({url})\n**» Usᴇʀ :** {requester}",
+                            caption=f"[{Video Information ⚠️}]({url})\n\n**Bot User :** {requester}",
                         )
                         remove_if_exists(image)
                     except (NoActiveGroupCall, GroupCallNotFound):
