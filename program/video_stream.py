@@ -184,9 +184,9 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 await m.reply_photo(
                     photo=image,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({link})\n"
-                            f"**» Tɪᴍᴇ :** `{duration}`\n"
-                            f"**» Usᴇʀ :** {requester}",
+                    caption=f"**[{Video Information ⚠️}]({link})\n"
+                            f"**Duration :** `{duration}`\n"
+                            f"**Bot User :** {requester}",
                 )
                 remove_if_exists(image)
             except (NoActiveGroupCall, GroupCallNotFound):
@@ -369,7 +369,7 @@ async def video_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"**» Vɪᴅᴇᴏ :** [{songname}]({url})\n**» Tɪᴍᴇ :** `{duration}`\n**» Usᴇʀ :** {requester}",
+                            caption=f"[{Video Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                         )
                         remove_if_exists(image)
                     else:
