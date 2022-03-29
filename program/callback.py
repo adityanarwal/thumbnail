@@ -186,7 +186,7 @@ async def commands_set(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton("Voice Chat❓", callback_data="user_command"),
-                    InlineKeyboardButton("Controller❗️", callback_data="admin_command")
+                    InlineKeyboardButton("Controls❗️", callback_data="admin_command")
                 ],[
                     InlineKeyboardButton("Extra 🕹", callback_data="extra_command")
                 ],[
@@ -248,10 +248,9 @@ async def extra_set(_, query: CallbackQuery):
 
 » /eval - run an code
 » /sh - run an code
-» /repo - Get The Bot Repo !!
+» /repo - Get The Bot Repo !! (in Group only)
 » /alive - show the bot alive info (in Group only)
-» /tgm - Generate the Telegraph link of media
-» /tgt - Generate the Telegraph link of text
+» /sysinfo - Show the bot system information
 » /speedtest - run the bot server speedtest
 » /search (query) - search for the youtube video link
 » /ping - show the bot ping status
