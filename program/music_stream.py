@@ -177,7 +177,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 LOGS.info(e)
     else:
         await m.reply_text(
-            "» reply to an **audio file** or **give something to search.**"
+            "Give Something To Play❗️"
         )
 
 
@@ -237,7 +237,7 @@ async def audio_stream(c: Client, m: Message):
         else:
             if len(m.command) < 2:
                 await m.reply(
-                    "» reply to an **audio file** or **give something to search.**"
+                    "Give Something To Play❗️"
                 )
             else:
                 suhu = await c.send_message(chat_id, "Processing....")
@@ -309,7 +309,7 @@ async def audio_stream(c: Client, m: Message):
     else:
         if len(m.command) < 2:
             await m.reply(
-                "» reply to an **audio file** or **give something to search.**"
+                "Give Something To Play❗️"
             )
         elif "t.me" in m.command[1]:
             for i in m.command[1:]:
@@ -431,7 +431,7 @@ async def live_music_stream(c: Client, m: Message):
                 f"Assistant is failed to join the Group❗️"
             )
     if len(m.command) < 2:
-        await m.reply_text("» Give me a youtube live url/m3u8 url to stream.")
+        await m.reply_text("» Give me a youtube live url to stream❗")
     else:
         url = m.text.split(None, 1)[1]
         msg = await m.reply_text("Processing....")
