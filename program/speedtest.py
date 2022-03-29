@@ -63,13 +63,12 @@ async def run_speedtest(_, message: Message):
 **ISP -** {result['client']['isp']}
 **Country -** {result['client']['country']}
   
-<u>**Server:**</u>
+<u>**Server :**</u>
 **Name -** {result['server']['name']}
-**Server -** {result['server']['country']}, {result['server']['cc']}
+**Network -** {result['server']['country']}, {result['server']['cc']}
 **Sponsor -** {result['server']['sponsor']}
 **Letency -** {result['server']['latency']}
-
-⚡️ **Ping -** {result['ping']}"""
+**Ping -** {result['ping']}"""
     msg = await app.send_photo(
         chat_id=message.chat.id, photo=path, caption=output
     )
