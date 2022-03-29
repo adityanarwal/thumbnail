@@ -78,7 +78,7 @@ async def stop(client, m: Message):
             traceback.print_exc()
             await m.reply_text(f"× 404 !! Error ×")
     else:
-        await m.reply_text("Nothing is streaming in the vc❗️")
+        await m.reply_text("Nothing is playing in the vc❗️")
 
 
 @Client.on_message(
