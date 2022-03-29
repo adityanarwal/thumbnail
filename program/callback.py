@@ -72,7 +72,7 @@ async def basic_set(_, query: CallbackQuery):
 
 » Give needed admin permission
 
-» Type /reload in your group
+» Type /refresh in your group
 
 » Start your groups voice chat
 
