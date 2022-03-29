@@ -48,7 +48,7 @@ Use the given buttons for more ❗️**""",
             [
                 [
                     InlineKeyboardButton("Commands❓", callback_data="command_list"),
-                    InlineKeyboardButton("About❕", callback_data="user_guide")
+                    InlineKeyboardButton("About❕", callback_data="bot_about")
                 ],[
                     InlineKeyboardButton("Basic Guide❔", callback_data="basic_guide")
                 ],[
@@ -113,10 +113,10 @@ Thanks !!**""",
     )
 
 
-@Client.on_callback_query(filters.regex("user_guide"))
+@Client.on_callback_query(filters.regex("bot_about"))
 @check_blacklist()
-async def user_set(_, query: CallbackQuery):
-    await query.answer("user guide")
+async def bot_set(_, query: CallbackQuery):
+    await query.answer("bot about")
     await query.edit_message_text(
         f"""**This Music Bot is designed by a noob for playing a high quality and unbreakable music in your groups voice chat.
 
