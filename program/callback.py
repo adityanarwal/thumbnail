@@ -330,7 +330,7 @@ async def at_set_markup_menu(_, query: CallbackQuery):
         await query.answer("control panel opened")
         await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(buttons))
     else:
-        await query.answer("❌ nothing is currently streaming", show_alert=True)
+        await query.answer("Nothing is streaming in the vc❗️", show_alert=True)
 
 
 @Client.on_callback_query(filters.regex("stream_home_panel"))
