@@ -167,10 +167,7 @@ async def commands_set(_, query: CallbackQuery):
     user_id = query.from_user.id
     await query.answer("commands menu")
     await query.edit_message_text(
-        f"""✨ **Heyy [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
-
-» Check out the menu below to read the module information & see the list of available Commands !
-""",
+        f"""**Check out the menu below to read the module information & see the list of available Commands !!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
