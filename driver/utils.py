@@ -25,8 +25,8 @@ from pytgcalls.types import Update
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="• Mᴇɴᴜ", callback_data="stream_menu_panel"),
-            InlineKeyboardButton(text="• Cʟᴏsᴇ", callback_data="set_close"),
+            InlineKeyboardButton(text="⚙ Controls", callback_data="stream_menu_panel"),
+            InlineKeyboardButton(text="Close❗️", callback_data="set_close"),
         ]
     ]
 )
