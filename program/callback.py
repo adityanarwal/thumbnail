@@ -85,7 +85,6 @@ async def basic_set(_, query: CallbackQuery):
                   ]
             ]
         ),
-        disable_web_page_preview=True,
     )
 
 
@@ -108,7 +107,6 @@ Thanks !!**""",
                   ]
              ] 
         ),
-        disable_web_page_preview=True,
     )
 
 
@@ -172,7 +170,6 @@ Note : Contact developer only that time if you have really need a help or facing
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Back Home", callback_data="home_stat")]]
         ),
-        disable_web_page_preview=True,
     )
 
 
