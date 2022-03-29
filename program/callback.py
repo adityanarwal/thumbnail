@@ -151,7 +151,7 @@ Thanks !!**""",
                 [
                     InlineKeyboardButton("Owner Contact❗️", callback_data="contact_owner")
                 ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="user_guide")
+                    InlineKeyboardButton("🔙 Go Back", callback_data="bot_about")
                 ]
             ]
         ),
