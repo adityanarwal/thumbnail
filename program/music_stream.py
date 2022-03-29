@@ -85,7 +85,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             return await m.reply_text(f"Failed to play the Music❗️")
     if not replied:
         return await m.reply(
-            "~ 𝖶𝗁𝗂𝖼𝗁 𝖲𝗈𝗇𝗀 𝖸𝗈𝗎 𝗐𝖺𝗇𝗍𝗌 𝖳𝗈 𝖯𝗅𝖺𝗒 ?? 𝖨𝗇 𝗍𝗁𝖾 𝘃𝗰 ⚡"
+            "Which song you wants to play in the voice chat❓"
         )
     if replied.audio or replied.voice:
         if not link:
