@@ -179,12 +179,12 @@ async def new_chat(c: Client, m: Message):
             if member.id == me_bot.id:
                 if chat_id in await blacklisted_chats():
                     await m.reply_text(
-                        "❗️ This chat has blacklisted by sudo user and You're not allowed to use me in this chat."
+                        "This chat has blacklisted by sudo user and You're not allowed to use me in this chat❗"
                     )
                     return await bot.leave_chat(chat_id)
             if member.id == me_bot.id:
                 return await m.reply(
-                    "𝖳𝗁𝖺𝗇𝗄𝗌 𝖥𝗈𝗋 𝖠𝖽𝖽𝗂𝗇𝗀 𝖬𝖾 𝖧𝖾𝗋𝖾, 𝖭𝗈𝗐 𝖬𝖺𝗄𝖾 𝖬𝖾 𝖠𝖽𝗆𝗂𝗇 𝖮𝖿 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 𝖮𝗍𝗁𝖾𝗋𝖶𝗂𝗌𝖾 𝖨'𝗆 𝖭𝗈𝗍 𝖠𝖻𝗅𝖾 𝖳𝗈 𝖶𝗈𝗋𝗄 𝖯𝗋𝗈𝗉𝖾𝗋𝗅𝗒 !! 𝗖𝗙𝗖™",
+                    "Thanks for adding me in your group. Now make me admin with needed permission, otherwise i am not able to work properly in your group❗️",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
