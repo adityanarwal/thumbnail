@@ -115,7 +115,7 @@ Thanks !!**""",
 
 @Client.on_callback_query(filters.regex("user_guide"))
 @check_blacklist()
-async def guide_set(_, query: CallbackQuery):
+async def user_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
         f"""**This Music Bot is designed by a noob for playing a high quality and unbreakable music in your groups voice chat.
@@ -126,7 +126,7 @@ Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Make your own Bot 🤖", callback_data=" ")
+                    InlineKeyboardButton("Make your own Bot 🤖", callback_data="own_bot")
                 ],[
                     InlineKeyboardButton("🔙 Back Home", callback_data="home_start")
                 ]
@@ -135,14 +135,14 @@ Thanks !!**""",
     )
 
 
-@Client.on_callback_query(filters.regex("user_guide"))
+@Client.on_callback_query(filters.regex("own_bot"))
 @check_blacklist()
-async def guide_set(_, query: CallbackQuery):
+async def own_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
-        f"""**This Music Bot is designed by a noob for playing a high quality and unbreakable music in your groups voice chat.
+        f"""**Tutorial soon at : @TeamBrokenProjects
 
-This bot helps you to play and download music from youtube server and many more features related to telegram voice chat.
+The Tutorial video about to making your own bot like this will be soon available at @TeamBrokenSupport. Also source code and all information about making bot published soon. Stay connected with us at our update channel.
 
 Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
