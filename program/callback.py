@@ -118,23 +118,39 @@ Thanks !!**""",
 async def guide_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
-        f"""**Izumi Music Bot is the bot designed by some noobs team for playing a high quality and unbreakable music and video in your groups voice chat.
+        f"""**This Music Bot is designed by a noob for playing a high quality and unbreakable music in your groups voice chat.
 
-This bot helps you to play music and video from youtube and to download music and video from youtube server and many more features related to telegram voice chat.
+This bot helps you to play and download music from youtube server and many more features related to telegram voice chat.
 
 Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Network 📡", url=f"https://t.me/CloseFriendsCommunity"),
-                    InlineKeyboardButton("Owner 🧑‍💻", url=f"https://t.me/PhoenixWarmed")
+                    InlineKeyboardButton("Make your own Bot 🤖", callback_data=" ")
                 ],[
-                    InlineKeyboardButton("Support 📨", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("Updates 📨", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("🔙 Back Home", callback_data="home_start")
+                ]
+            ]
+        ),
+    )
+
+
+@Client.on_callback_query(filters.regex("user_guide"))
+@check_blacklist()
+async def guide_set(_, query: CallbackQuery):
+    await query.answer("user guide")
+    await query.edit_message_text(
+        f"""**This Music Bot is designed by a noob for playing a high quality and unbreakable music in your groups voice chat.
+
+This bot helps you to play and download music from youtube server and many more features related to telegram voice chat.
+
+Thanks !!**""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("Owner Contact❗️", callback_data="contact_owner")
                 ],[
-                    InlineKeyboardButton("Source Code™", url="https://t.me/Its_romeoo")
-                ],[
-                    InlineKeyboardButton("🔙 𝗕𝖺𝖼𝗄 𝗛𝗈𝗆𝖾", callback_data="home_start")
+                    InlineKeyboardButton("🔙 Go Back", callback_data="user_guide")
                 ]
             ]
         ),
