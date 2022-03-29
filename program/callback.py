@@ -193,7 +193,7 @@ async def commands_set(_, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton("Extra 🕹", callback_data="extra_command")
                 ],[
-                    InlineKeyboardButton("🔙 𝗕ack 𝗛𝗈𝗆𝖾", callback_data="home_start")
+                    InlineKeyboardButton("🔙 Back Home", callback_data="home_start")
                 ],
             ]
         ),
@@ -216,7 +216,7 @@ async def user_set(_, query: CallbackQuery):
 » /song (query) - download song from YouTube
 » /video (query) - download video from YouTube""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
         ),
     )
 
@@ -237,7 +237,7 @@ async def admin_set(_, query: CallbackQuery):
 » /userbotjoin - invite the userbot to join group
 » /userbotleave - order userbot to leave from group""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
         ),
     )
 
@@ -260,7 +260,7 @@ async def extra_set(_, query: CallbackQuery):
 » /ping - show the bot ping status
 » /uptime - show the bot uptime status""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 𝗚𝗼 𝗕𝗮𝗰𝗸", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
         ),
     )
 
