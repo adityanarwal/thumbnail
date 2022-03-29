@@ -89,9 +89,9 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         )
     if replied.audio or replied.voice:
         if not link:
-            suhu = await replied.reply("~ 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽𝗂𝗇𝗀 📥 𝖠𝗎𝖽𝗂𝗈 !!")
+            suhu = await replied.reply("Processing....")
         else:
-            suhu = await m.reply("~ 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽𝗂𝗇𝗀 📥 𝖠𝗎𝖽𝗂𝗈 !!")
+            suhu = await m.reply("Processing....")
         dl = await replied.download()
         link = replied.link
         songname = "music"
@@ -144,7 +144,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 title = songname
                 userid = m.from_user.id
                 image = await thumb(thumbnail, title, userid, ctitle)
-                await suhu.edit("» 𝖢𝗈𝗇𝗇𝖾𝖼𝗍𝗂𝗇𝗀.... 𝗍𝗈 𝗏𝖼 !!")
+                await suhu.edit("Connecting....")
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
                 await calls.join_group_call(
@@ -172,7 +172,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             except (NoActiveGroupCall, GroupCallNotFound):
                 await suhu.delete()
                 await remove_active_chat(chat_id)
-                await m.reply_text("❌ The bot can't find the Group call or it's inactive.\n\n» Use /startvc command to turn on the Group call !")
+                await m.reply_text("Bot can't able to join the voice chat❗️")
             except Exception as e:
                 LOGS.info(e)
     else:
@@ -198,7 +198,7 @@ async def audio_stream(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "banned":
             try:
-                await m.reply_text("❌ The userbot is banned in this chat, unban the userbot first to be able to play music !")
+                await m.reply_text("My Assistant is banned in this Group. Unban the assistant first❗️")
                 await remove_active_chat(chat_id)
             except BaseException:
                 pass
@@ -229,7 +229,7 @@ async def audio_stream(c: Client, m: Message):
         except Exception as e:
             LOGS.info(e)
             return await m.reply_text(
-                f"❌ **userbot failed to join**\n\n**reason**: `{e}`"
+                f"Assistant is failed to join the Group❗️"
             )
     if replied:
         if replied.audio or replied.voice:
@@ -257,7 +257,7 @@ async def audio_stream(c: Client, m: Message):
                     image = await thumb(thumbnail, title, userid, ctitle)
                     out, ytlink = await ytdl(url)
                     if out == 0:
-                        await suhu.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")
+                        await suhu.edit(f"Y-T DL issue Detected❗️")
                     else:
                         if chat_id in QUEUE:
                             await suhu.edit("~ 𝖰𝗎𝖾𝗎𝗂𝗇𝗀 !! 𝗍𝗁𝖾 𝖲𝗈𝗇𝗀....")
@@ -295,17 +295,17 @@ async def audio_stream(c: Client, m: Message):
                                 await m.reply_photo(
                                     photo=image,
                                     reply_markup=InlineKeyboardMarkup(buttons),
-                                    caption=f"**» Sᴏɴɢ :** [{songname}]({url})\n**» Tɪᴍᴇ :** `{duration}`\n**» Usᴇʀ :** {requester}",
+                                    caption=f"[{Song Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                                 )
                                 remove_if_exists(image)
                             except (NoActiveGroupCall, GroupCallNotFound):
                                 await suhu.delete()
                                 await remove_active_chat(chat_id)
-                                await m.reply_text("❌ The bot can't find the Group call or it's inactive.\n\n» Use /startvc command to turn on the Group call !")
+                                await m.reply_text("Bot can't able to join the voice chat❗️")
                             except NoAudioSourceFound:
                                 await suhu.delete()
                                 await remove_active_chat(chat_id)
-                                await m.reply_text("❌ The content you provide to play has no audio source")
+                                await m.reply_text("The content you provide to play has no audio❗️")
     else:
         if len(m.command) < 2:
             await m.reply(
@@ -334,7 +334,7 @@ async def audio_stream(c: Client, m: Message):
                 image = await thumb(thumbnail, title, userid, ctitle)
                 veez, ytlink = await ytdl(url)
                 if veez == 0:
-                    await suhu.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")
+                    await suhu.edit(f"Y-T DL issue Detected❗️")
                 else:
                     if chat_id in QUEUE:
                         await suhu.edit("~ 𝖰𝗎𝖾𝗎𝗂𝗇𝗀 !! 𝗍𝗁𝖾 𝖲𝗈𝗇𝗀....")
@@ -368,17 +368,17 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"**» Sᴏɴɢ :** [{songname}]({url})\n**» Tɪᴍᴇ :** `{duration}`\n**» Usᴇʀ :** {requester}",
+                                caption=f"[{Song Information ⚠️}]({url})\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                             )
                             remove_if_exists(image)
                         except (NoActiveGroupCall, GroupCallNotFound):
                             await suhu.delete()
                             await remove_active_chat(chat_id)
-                            await m.reply_text("❌ The bot can't find the Group call or it's inactive.\n\n» Use /startvc command to turn on the Group call !")
+                            await m.reply_text("Bot can't able to join the voice chat❗️")
                         except NoAudioSourceFound:
                             await suhu.delete()
                             await remove_active_chat(chat_id)
-                            await m.reply_text("❌ The content you provide to play has no audio source.\n\n» Try to play another song or try again later !")
+                            await m.reply_text("The content you provide to play has no audio❗️")
 
 
 @Client.on_message(command(["stream", f"stream@{BOT_USERNAME}"]) & other_filters)
@@ -397,7 +397,7 @@ async def live_music_stream(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "banned":
             try:
-                await m.reply_text("❌ The userbot is banned in this chat, unban the userbot first to be able to play music !")
+                await m.reply_text("My Assistant is banned in this Group. Unban the assistant first❗️")
                 await remove_active_chat(chat_id)
             except BaseException:
                 pass
@@ -428,7 +428,7 @@ async def live_music_stream(c: Client, m: Message):
         except Exception as e:
             LOGS.info(e)
             return await m.reply_text(
-                f"❌ **userbot failed to join**\n\n**reason**: `{e}`"
+                f"Assistant is failed to join the Group❗️"
             )
     if len(m.command) < 2:
         await m.reply_text("» Give me a youtube live url/m3u8 url to stream.")
@@ -443,7 +443,7 @@ async def live_music_stream(c: Client, m: Message):
             data = url
             coda = 1
         if coda == 0:
-            await msg.edit_text(f"❌ yt-dl issues detected\n\n» `{data}`")
+            await msg.edit_text(f"Y-T DL issue Detected❗️")
         else:
             if "m3u8" in url:
                 if chat_id in QUEUE:
@@ -482,11 +482,11 @@ async def live_music_stream(c: Client, m: Message):
                     except (NoActiveGroupCall, GroupCallNotFound):
                         await msg.delete()
                         await remove_active_chat(chat_id)
-                        await m.reply_text("❌ The bot can't find the Group call or it's inactive.\n\n» Use /startvc command to turn on the Group call !")
+                        await m.reply_text("Bot can't able to join the voice chat❗️")
                     except NoAudioSourceFound:
                         await msg.delete()
                         await remove_active_chat(chat_id)
-                        await m.reply_text("❌ The content you provide to play has no audio source")
+                        await m.reply_text("The content you provide to play has no audio❗️")
             else:
                 search = ytsearch(url)
                 title = search[0]
@@ -534,11 +534,11 @@ async def live_music_stream(c: Client, m: Message):
                     except (NoActiveGroupCall, GroupCallNotFound):
                         await msg.delete()
                         await remove_active_chat(chat_id)
-                        await m.reply_text("❌ The bot can't find the Group call or it's inactive.\n\n» Use /startvc command to turn on the Group call !")
+                        await m.reply_text("Bot can't able to join the voice chat❗️")
                     except NoAudioSourceFound:
                         await msg.delete()
                         await remove_active_chat(chat_id)
-                        await m.reply_text("❌ The content you provide to play has no audio source")
+                        await m.reply_text("The content you provide to play has no audio❗️")
                     except TimeoutError:
                         await msg.delete()
                         await remove_active_chat(chat_id)
