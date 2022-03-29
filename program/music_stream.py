@@ -244,7 +244,7 @@ async def audio_stream(c: Client, m: Message):
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
-                    await suhu.edit("× 𝐄𝐫𝐨𝐫 404 - 𝖲𝗈𝗇𝗀 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 !!")
+                    await suhu.edit("No results found❗️")
                 else:
                     songname = search[0]
                     title = search[0]
@@ -321,7 +321,7 @@ async def audio_stream(c: Client, m: Message):
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await suhu.edit("× 𝐄𝐫𝐨𝐫 404 - 𝖲𝗈𝗇𝗀 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 !!")
+                await suhu.edit("No results found❗️")
             else:
                 songname = search[0]
                 title = search[0]
@@ -368,7 +368,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"[{Song Information ⚠️}]({url})\n**Duration :** `{duration}`\n**Bot User :** {requester}",
+                                caption=f"[{Song Information ⚠️}]({url})\n\n**Duration :** `{duration}`\n**Bot User :** {requester}",
                             )
                             remove_if_exists(image)
                         except (NoActiveGroupCall, GroupCallNotFound):
@@ -477,7 +477,7 @@ async def live_music_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMG_2}",
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"**» Sᴏɴɢ :** [m3u8 audio stream]({url})\n**» Usᴇʀ :** {requester}",
+                            caption=f"[Song Information ⚠️]({url})\n\n**Bot User :** {requester}",
                         )
                     except (NoActiveGroupCall, GroupCallNotFound):
                         await msg.delete()
@@ -528,7 +528,7 @@ async def live_music_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"[{Song Information ⚠️}]({url})\n**Bot User :** {requester}",
+                            caption=f"[{Song Information ⚠️}]({url})\n\n**Bot User :** {requester}",
                         )
                         remove_if_exists(image)
                     except (NoActiveGroupCall, GroupCallNotFound):
