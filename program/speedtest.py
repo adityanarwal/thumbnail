@@ -59,7 +59,7 @@ async def run_speedtest(_, message: Message):
 
     output = f"""**Bot Server Speed :-**
     
-<u>**Client:**</u>
+<u>**Client :**</u>
 **ISP -** {result['client']['isp']}
 **Country -** {result['client']['country']}
   
