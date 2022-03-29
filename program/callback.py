@@ -38,7 +38,7 @@ from config import (
 @check_blacklist()
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
-    await query.message.reply_photo(
+    await query.message_reply_photo(
         photo=f"https://telegra.ph/file/50c77a56c2489872836dc.jpg",
         caption=f"""**Welcome - {message.from_user.mention()} 👋
 This is the Broken music bot, a bot for playing high quality and unbreakable music in your groups voice chat.
