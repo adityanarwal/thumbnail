@@ -126,7 +126,8 @@ Thanks !!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Make your own Bot 🤖", callback_data="own_bot")
+                    InlineKeyboardButton("Make your own Bot 🤖", callback_data="own_bot"),
+                    InlineKeyboardButton("Assistant 🧑‍💻", callback_data="admin_command")
                 ],[
                     InlineKeyboardButton("🔙 Back Home", callback_data="home_start")
                 ]
