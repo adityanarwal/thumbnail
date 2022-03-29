@@ -131,12 +131,12 @@ async def stream_end_handler(_, u: Update):
         elif queue == 2:
             await bot.send_message(
                 chat_id,
-                "❌ an error occurred\n\n» **Clearing** Queues and leaving video chat.",
+                "An error occurred. Assistant leaving the voice chat❗",
             )
         else:
             await bot.send_message(
                 chat_id,
-                f"**[Video Information ⚠️]({queue[1]}) | `{queue[2]}`\n\n**Group Id :** `{chat_id}`",
+                f"**[Music Information ⚠️]({queue[1]})\n\n**Group Id :** `{chat_id}`",
                 disable_web_page_preview=True,
                 reply_markup=keyboard,
             )
