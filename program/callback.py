@@ -78,9 +78,11 @@ If you are facing any issues regarding me kindly report in my support group so t
 
 Thanks !!""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="user_guide")]]
+            [
+                   InlineKeyboardButton("🔙 Back", callback_data="user_guide"),
+                   InlineKeyboardButton("📨 Support", url=f"https://t.me/{GROUP_SUPPORT}")
+            ],
         ),
-        disable_web_page_preview=True,
     )
 
 
@@ -205,10 +207,10 @@ async def sudo_set(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("owner_command"))
+@Client.on_callback_query(filters.regex("about_bot"))
 @check_blacklist()
-async def owner_set(_, query: CallbackQuery):
-    await query.answer("owner commands")
+async def about_set(_, query: CallbackQuery):
+    await query.answer("bot about")
     await query.edit_message_text(
         f"""This bot is designed by a noob for playing a high quality and unbreakable music × video in your groups voice chat. This bot is also helps you to download music and video from the YouTube server.
 
@@ -222,7 +224,10 @@ async def owner_set(_, query: CallbackQuery):
 
 Note : Contact developers only that time if you have really need a help or facing any type of issues. Don't try to waste our and your time by asking useless queries !!""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [
+                   InlineKeyboardButton("🔙 Back", callback_data="home_start"),
+                   InlineKeyboardButton("🧑‍💻 Owner", url=f"https://t.me/{OWNER_USERNAME}")
+            ],
         ),
     )
 
