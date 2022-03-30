@@ -113,20 +113,20 @@ async def commands_set(_, query: CallbackQuery):
     user_id = query.from_user.id
     await query.answer("commands menu")
     await query.edit_message_text(
-        f"""✨ **Hello [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
-» Check out the menu below to read the module information & see the list of available Commands !
-All commands can be used with (`! / .`) handler""",
+        f"""Click on the buttons below for more information. If you're facing any problem in command you can contact my bot owner or ask in support chat.
+
+All commands can be used with: /""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👮🏻‍♀️ Admins Commands", callback_data="admin_command"),
+                    InlineKeyboardButton("Admin Commands", callback_data="admin_command"),
                 ],[
-                    InlineKeyboardButton("👩🏻‍💼 Users Commands", callback_data="user_command"),
+                    InlineKeyboardButton("Play Commands", callback_data="user_command"),
                 ],[
-                    InlineKeyboardButton("Sudo Commands", callback_data="sudo_command"),
+                    InlineKeyboardButton("Extra Commands", callback_data="sudo_command"),
                     InlineKeyboardButton("Owner Commands", callback_data="owner_command"),
                 ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="home_start")
+                    InlineKeyboardButton("🔙 Back", callback_data="home_start")
                 ],
             ]
         ),
@@ -149,7 +149,7 @@ async def user_set(_, query: CallbackQuery):
 » /song (query) - download song from YouTube
 » /video (query) - download video from YouTube""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 Back", callback_data="command_list")]]
         ),
     )
 
@@ -170,7 +170,7 @@ async def admin_set(_, query: CallbackQuery):
 » /userbotjoin - invite the userbot to join group
 » /userbotleave - order userbot to leave from group""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 Back", callback_data="command_list")]]
         ),
     )
 
@@ -192,7 +192,7 @@ async def sudo_set(_, query: CallbackQuery):
 » /ping - show the bot ping status
 » /uptime - show the bot uptime status""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🔙 Back", callback_data="command_list")]]
         ),
     )
 
@@ -202,7 +202,17 @@ async def sudo_set(_, query: CallbackQuery):
 async def owner_set(_, query: CallbackQuery):
     await query.answer("owner commands")
     await query.edit_message_text(
-        f""" """,
+        f"""This bot is designed by a noob for playing a high quality and unbreakable music × video in your groups voice chat. This bot is also helps you to download music and video from the YouTube server.
+
+• Bot Managed By 
+- @Its_romeoo
+- @Xmm_444
+
+• Powered by
+- @PHOENIX_EMPIRE
+- @CFC_BOTS
+
+Note : Contact developers only that time if you have really need a help or facing any type of issues. Don't try to waste our and your time by asking useless queries !!""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
         ),
