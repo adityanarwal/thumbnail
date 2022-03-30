@@ -86,7 +86,7 @@ async def start_(c: Client, message: Message):
     await message.reply_text(
         f"""Hello, My name is Broken Music.
 
-I'm easy to use superfast telegram player for playing high quality and unbreakable music and video in your groups voice chat.
+I am easy to use superfast telegram player for playing high quality and unbreakable music and video in your groups voice chat.
 
 Use the given buttons for more.""",
         reply_markup=InlineKeyboardMarkup(
@@ -94,10 +94,8 @@ Use the given buttons for more.""",
                 [
                     InlineKeyboardButton("🔎 How to use ? Commands", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")
-                ],[
-                    InlineKeyboardButton("📨 Support", callback_data="command_list"),
-                    InlineKeyboardButton("📨 Updates", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("📨 Support", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("📨 Updates", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
                     InlineKeyboardButton("✚ Add me to your Group", url="https://github.com/levina-lab/video-stream")
                 ],[
