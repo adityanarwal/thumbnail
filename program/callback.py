@@ -81,7 +81,7 @@ Thanks !!""",
             [
                 [
                     InlineKeyboardButton("📨 Support", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("🔙 Back", callback_data="basic_guide")
+                    InlineKeyboardButton("🔙 Back", callback_data="user_guide")
                 ],
             ]
         ),
@@ -132,7 +132,6 @@ All commands can be used with: /""",
             [
                 [
                     InlineKeyboardButton("Admin Commands", callback_data="admin_command"),
-                ],[
                     InlineKeyboardButton("Play Commands", callback_data="user_command"),
                 ],[
                     InlineKeyboardButton("Extra Commands", callback_data="sudo_command"),
