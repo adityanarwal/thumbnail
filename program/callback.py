@@ -55,8 +55,8 @@ Use the given buttons for more.
                 ],[
                     InlineKeyboardButton("✚ Add me to your Group", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("📚 Basic Guide", callback_data="user_guide"),
-                    InlineKeyboardButton("❗️About", callback_data="about_bot")
+                    InlineKeyboardButton("🏳‍🌈 Basic Guide", callback_data="user_guide"),
+                    InlineKeyboardButton("💡 About", callback_data="about_bot")
                 ],
             ]
         ),
