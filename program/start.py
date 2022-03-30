@@ -83,27 +83,30 @@ async def _human_time_duration(seconds):
 async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/50c77a56c2489872836dc.jpg",
-        caption=f"""**Welcome - {message.from_user.mention()} 👋
+    await message.reply_text(
+        f"""Hello, My name is Broken Music.
 
-This is the Broken music bot, a bot for playing high quality and unbreakable music in your groups voice chat.
+I'm easy to use superfast telegram player for playing high quality and unbreakable music and video in your groups voice chat.
 
-Just add me to your group and make a admin with needed admin permission to perform a right actions !!
-
-Use the given buttons for more ❗️**""",
+Use the given buttons for more.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Commands❓", callback_data="command_list"),
-                    InlineKeyboardButton("About❕", callback_data="bot_about")
+                    InlineKeyboardButton("🔎 How to use ? Commands", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("Basic Guide❔", callback_data="basic_guide")
+                    InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton("✚ Add Me To Your Group ✚", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("📨 Support", callback_data="command_list"),
+                    InlineKeyboardButton("📨 Updates", url=f"https://t.me/{OWNER_USERNAME}")
+                ],[
+                    InlineKeyboardButton("✚ Add me to your Group", url="https://github.com/levina-lab/video-stream")
+                ],[
+                    InlineKeyboardButton("📚 Basic Guide", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("❗️About", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],
             ]
         ),
+        disable_web_page_preview=True,
     )
 
 
