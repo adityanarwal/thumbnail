@@ -92,15 +92,15 @@ Use the given buttons for more.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔎 How to use ? Commands", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("🔎 How to use ? Commands", ")
                 ],[
                     InlineKeyboardButton("📨 Support", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("📨 Updates", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("✚ Add me to your Group", url="https://github.com/levina-lab/video-stream")
+                    InlineKeyboardButton("✚ Add me to your Group", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("📚 Basic Guide", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("❗️About", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("📚 Basic Guide", "),
+                    InlineKeyboardButton("❗️About", ")
                 ],
             ]
         ),
