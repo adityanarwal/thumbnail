@@ -232,6 +232,30 @@ Note : Contact developers only that time if you have really need a help or facin
     )
 
 
+@Client.on_callback_query(filters.regex("owner_command"))
+@check_blacklist()
+async def owner_set(_, query: CallbackQuery):
+    user_id = query.from_user.id
+    if user_id not in OWNER_ID:
+        await query.answer("⚠️ Opps, You are not the owner of this Bot.", show_alert=True)
+        return
+    await query.answer("owner commands")
+    await query.edit_message_text(
+        f"""✏️ Command list for bot owner.
+» /gban (`username` or `user_id`) - for global banned people, can be used only in group
+» /ungban (`username` or `user_id`) - for un-global banned people, can be used only in group
+» /update - update your bot to latest version
+» /restart - restart your bot server
+» /leaveall - order userbot to leave from all group
+» /leavebot (`chat id`) - order bot to leave from the group you specify
+» /broadcast (`message`) - send a broadcast message to all groups in bot database
+» /broadcast_pin (`message`) - send a broadcast message to all groups in bot database with the chat pin""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+        ),
+    )
+
+
 @Client.on_callback_query(filters.regex("stream_menu_panel"))
 @check_blacklist()
 async def at_set_markup_menu(_, query: CallbackQuery):
