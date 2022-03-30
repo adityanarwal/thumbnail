@@ -69,11 +69,14 @@ Use the given buttons for more.
 async def quick_set(_, query: CallbackQuery):
     await query.answer("quick bot usage")
     await query.edit_message_text(
-        f"""ℹ️ Quick use Guide bot, please read fully !
-👩🏻‍💼 » /play - Type this with give the song title or youtube link or audio file to play Music. (Remember to don't play YouTube live stream by using this command!, because it will cause unforeseen problems.)
-👩🏻‍💼 » /vplay - Type this with give the song title or youtube link or video file to play Video. (Remember to don't play YouTube live video by using this command!, because it will cause unforeseen problems.)
-👩🏻‍💼 » /vstream - Type this with give the YouTube live stream video link or m3u8 link to play live Video. (Remember to don't play local audio/video files or non-live YouTube video by using this command!, because it will cause unforeseen problems.)
-❓ Have questions? Contact us in [Support Group](https://t.me/{GROUP_SUPPORT}).""",
+        f"""Mostly Faced Error ⚠️
+
+There wiil be the main error about to music assistant. If you are facing any type of error in your group then that time first make sure @BrokenxMusicAssistant is available in your group. If not then add it manually and before that make sure also it is not banned in your chat.
+
+
+If you are facing any issues regarding me kindly report in my support group so the developers can fix me out for your needs.
+
+Thanks !!""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="user_guide")]]
         ),
@@ -86,21 +89,26 @@ async def quick_set(_, query: CallbackQuery):
 async def guide_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
-        f"""❓ How to use this Bot ?, read the Guide below !
-1.) First, add this bot to your Group.
-2.) Then, promote this bot as administrator on the Group also give all permissions except Anonymous admin.
-3.) After promoting this bot, type /reload in Group to update the admin data.
-3.) Invite @{me_user.username} to your group or type /userbotjoin to invite her, unfortunately the userbot will joined by itself when you type `/play (song name)` or `/vplay (song name)`.
-4.) Turn on/Start the video chat first before start to play video/music.
-`- END, EVERYTHING HAS BEEN SETUP -`
-📌 If the userbot not joined to video chat, make sure if the video chat already turned on and the userbot in the chat.
-💡 If you have a follow-up questions about this bot, you can tell it on my support chat here: @{GROUP_SUPPORT}.""",
+        f"""⚠️ Read Basic Guide Carefully !!
+
+
+» First add this bot in your group
+
+» Make a bot admin
+
+» Give needed admin permission
+
+» Type /refresh in your group
+
+» Start your groups voice chat
+
+» Now play your song and enjoy""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("» Quick use Guide «", callback_data="quick_use")
+                    InlineKeyboardButton("💡 About Common Error", callback_data="quick_use")
                 ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="home_start")
+                    InlineKeyboardButton("🔙 Back", callback_data="home_start")
                 ],
             ]
         ),
