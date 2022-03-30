@@ -1,17 +1,14 @@
 """
 Video + Music Stream Telegram Bot
 Copyright (c) 2022-present levina=lab <https://github.com/levina-lab>
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
-
 This program is distributed in the hope that it will be useful,
 but without any warranty; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
-
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/licenses.html>
 """
@@ -39,7 +36,7 @@ from driver.utils import remove_if_exists
 async def song_downloader(_, message):
     await message.delete()
     query = " ".join(message.command[1:])
-    m = await message.reply("Processing....")
+    m = await message.reply("🔎 finding song...")
     ydl_ops = {
         'format': 'bestaudio[ext=m4a]',
         'geo-bypass': True,
@@ -61,10 +58,10 @@ async def song_downloader(_, message):
         duration = results[0]["duration"]
 
     except Exception as e:
-        await m.edit("× 𝐄𝐫𝐨𝐫 404 - 𝖲𝗈𝗇𝗀 𝖭𝗈𝗍 𝖥𝗈𝗎𝗇𝖽 !!")
+        await m.edit("❌ song not found.\n\n» Give me a valid song name !")
         print(str(e))
         return
-    await m.edit("Processing....")
+    await m.edit("📥 downloading song...")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -76,7 +73,7 @@ async def song_downloader(_, message):
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        await m.edit("Uploading....")
+        await m.edit("📤 uploading song...")
         await message.reply_audio(
             audio_file,
             caption=rep,
@@ -89,7 +86,7 @@ async def song_downloader(_, message):
         await m.delete()
 
     except Exception as e:
-        await m.edit("× 404 !! Error ×")
+        await m.edit("❌ error, wait for bot owner to fix")
         print(e)
     try:
         remove_if_exists(audio_file)
@@ -130,15 +127,15 @@ async def video_downloader(_, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("Processing....")
+        msg = await message.reply("📥 downloading video...")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
         traceback.print_exc()
-        return await msg.edit(f"× 404 !! Error ×")
+        return await msg.edit(f"🚫 error: `{e}`")
     preview = wget.download(thumbnail)
-    await msg.edit("Uploading....")
+    await msg.edit("📤 uploading video...")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
@@ -157,19 +154,18 @@ async def video_downloader(_, message):
 async def get_lyric_genius(_, message: Message):
     if len(message.command) < 2:
         return await message.reply_text("**usage:**\n\n/lyrics (song name)")
-    m = await message.reply_text("Processing....")
+    m = await message.reply_text("🔍 Searching lyrics...")
     query = message.text.split(None, 1)[1]
     api = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
     data = lyricsgenius.Genius(api)
     data.verbose = False
     result = data.search_song(query, get_full_info=False)
     if result is None:
-        return await m.edit("No results found❗")
+        return await m.edit("❌ `404` lyrics not found")
     xxx = f"""
 **Title song:** {query}
 **Artist name:** {result.artist}
 **Lyrics:**
-
 {result.lyrics}"""
     if len(xxx) > 4096:
         await m.delete()
