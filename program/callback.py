@@ -80,9 +80,8 @@ Thanks !!""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Owner Contact❗️", callback_data="bot_owner")
-                ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="basic_guide")
+                    InlineKeyboardButton("📨 Support", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("🔙 Back", callback_data="basic_guide")
                 ],
             ]
         ),
@@ -111,9 +110,9 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Owner Contact❗️", callback_data="bot_owner")
+                    InlineKeyboardButton("💡 About Common Error", callback_data="quick_use")
                 ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="basic_guide")
+                    InlineKeyboardButton("🔙 Back", callback_data="home_start")
                 ],
             ]
         ),
@@ -229,9 +228,8 @@ Note : Contact developers only that time if you have really need a help or facin
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Owner Contact❗️", callback_data="bot_owner")
-                ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="basic_guide")
+                    InlineKeyboardButton("🔙 Back", callback_data="home_start"),
+                    InlineKeyboardButton("🧑‍💻 Owner", url=f"https://t.me/{OWNER_USERNAME}")
                 ],
             ]
         ),
