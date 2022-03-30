@@ -48,15 +48,15 @@ Use the given buttons for more.
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔎 How to use ? Commands", ")
+                    InlineKeyboardButton("🔎 How to use ? Commands", callback_data="command_list")
                 ],[
                     InlineKeyboardButton("📨 Support", url=f"https://t.me/{GROUP_SUPPORT}"),
                     InlineKeyboardButton("📨 Updates", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
                     InlineKeyboardButton("✚ Add me to your Group", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("📚 Basic Guide", "),
-                    InlineKeyboardButton("❗️About", ")
+                    InlineKeyboardButton("📚 Basic Guide", callback_data="user_guide"),
+                    InlineKeyboardButton("❗️About", callback_data="about_bot")
                 ],
             ]
         ),
