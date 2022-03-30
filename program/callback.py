@@ -39,25 +39,24 @@ from config import (
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f"""Hi [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) 👋🏻\n
-💭 [{me_bot.first_name}](https://t.me/{me_bot.username}) is a bot to play music and video in groups, through the new Telegram video chats.
-🕵🏻 Check out all the **Bot's commands** and how they work by clicking on the » 📚 **Commands** button!
-🧑🏻‍💻 To know how to use this bot, please click on the » ❓ **Basic Guide** button!
+        f"""Hello, My name is Broken Music.
+
+I'm easy to use superfast telegram player for playing high quality and unbreakable music and video in your groups voice chat.
+
+Use the given buttons for more.
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("➕ Add me to a Group ➕", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("🔎 How to use ? Commands", ")
                 ],[
-                    InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")
+                    InlineKeyboardButton("📨 Support", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("📨 Updates", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("📚 Commands", callback_data="command_list"),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("✚ Add me to your Group", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("👥 Support Group", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("📣 Support Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
-                ],[
-                    InlineKeyboardButton("🌐 Source Code", url="https://github.com/levina-lab/video-stream")
+                    InlineKeyboardButton("📚 Basic Guide", "),
+                    InlineKeyboardButton("❗️About", ")
                 ],
             ]
         ),
@@ -139,19 +138,16 @@ All commands can be used with (`! / .`) handler""",
 async def user_set(_, query: CallbackQuery):
     await query.answer("basic commands")
     await query.edit_message_text(
-        f"""✏️ Command list for all user.
+        f"""⚠️ Voice Chat Commands.
+
 » /play (song name/youtube link) - play the music from youtube
-» /stream (m3u8/youtube live link) - play youtube/m3u8 live stream music
 » /vplay (video name/youtube link) - play the video from youtube
-» /vstream (m3u8/youtube live link) - play youtube/m3u8 live stream video
+» /stream (m3u8/youtube live link) - play youtube/m3u8 live stream music
+» /vstream (youtube live link) - play youtube/m3u8 live stream video
 » /playlist - view the queue list of songs and current playing song
 » /lyric (query) - search for song lyrics based on the name of the song
-» /video (query) - download video from youtube
-» /song (query) - download song from youtube
-» /search (query) - search for the youtube video link
-» /ping - show the bot ping status
-» /uptime - show the bot uptime status
-» /alive - show the bot alive info (in Group only)""",
+» /song (query) - download song from YouTube
+» /video (query) - download video from YouTube""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
         ),
@@ -163,19 +159,16 @@ async def user_set(_, query: CallbackQuery):
 async def admin_set(_, query: CallbackQuery):
     await query.answer("admin commands")
     await query.edit_message_text(
-        f"""✏️ Command list for group admin.
+        f"""⚠️ Only Group admins can use this commands.
+
 » /pause - pause the current track being played
 » /resume - play the previously paused track
 » /skip - goes to the next track
 » /stop - stop playback of the track and clears the queue
-» /vmute - mute the streamer userbot on group call
-» /vunmute - unmute the streamer userbot on group call
 » /volume `1-200` - adjust the volume of music (userbot must be admin)
-» /reload - reload bot and refresh the admin data
+» /refresh - refresh the bot server and refresh the admin data
 » /userbotjoin - invite the userbot to join group
-» /userbotleave - order userbot to leave from group
-» /startvc - start/restart the group call
-» /stopvc - stop/discard the group call""",
+» /userbotleave - order userbot to leave from group""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
         ),
@@ -185,23 +178,19 @@ async def admin_set(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("sudo_command"))
 @check_blacklist()
 async def sudo_set(_, query: CallbackQuery):
-    user_id = query.from_user.id
-    if user_id not in SUDO_USERS:
-        await query.answer("⚠️ You don't have permissions to click this button\n\n» This button is reserved for sudo members of this bot.", show_alert=True)
-        return
     await query.answer("sudo commands")
     await query.edit_message_text(
-        f"""✏️ Command list for sudo user.
-» /stats - get the bot current statistic
-» /calls - show you the list of all active group call in database
-» /block (`chat_id`) - use this to blacklist any group from using your bot
-» /unblock (`chat_id`) - use this to whitelist any group from using your bot
-» /blocklist - show you the list of all blacklisted chat
-» /speedtest - run the bot server speedtest
-» /sysinfo - show the system information
-» /logs - generate the current bot logs
+        f"""⚠️ Extra Commands List.
+
 » /eval - run an code
-» /sh - run an code""",
+» /sh - run an code
+» /sysinfo - show the system information
+» /repo - Get The Bot Repo !!
+» /alive - show the bot alive info (in Group only)
+» /speedtest - run the bot server speedtest
+» /search (query) - search for the youtube video link
+» /ping - show the bot ping status
+» /uptime - show the bot uptime status""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
         ),
@@ -211,21 +200,9 @@ async def sudo_set(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("owner_command"))
 @check_blacklist()
 async def owner_set(_, query: CallbackQuery):
-    user_id = query.from_user.id
-    if user_id not in OWNER_ID:
-        await query.answer("⚠️ You don't have permissions to click this button\n\n» This button is reserved for owner of this bot.", show_alert=True)
-        return
     await query.answer("owner commands")
     await query.edit_message_text(
-        f"""✏️ Command list for bot owner.
-» /gban (`username` or `user_id`) - for global banned people, can be used only in group
-» /ungban (`username` or `user_id`) - for un-global banned people, can be used only in group
-» /update - update your bot to latest version
-» /restart - restart your bot server
-» /leaveall - order userbot to leave from all group
-» /leavebot (`chat id`) - order bot to leave from the group you specify
-» /broadcast (`message`) - send a broadcast message to all groups in bot database
-» /broadcast_pin (`message`) - send a broadcast message to all groups in bot database with the chat pin""",
+        f""" """,
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
         ),
