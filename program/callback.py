@@ -110,7 +110,7 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💡 About Common Error", callback_data="quick_use")
+                    InlineKeyboardButton("❗About Common Error", callback_data="quick_use")
                 ],[
                     InlineKeyboardButton("🔙 Back", callback_data="home_start")
                 ],
