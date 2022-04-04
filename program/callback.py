@@ -101,7 +101,7 @@ async def guide_set(_, query: CallbackQuery):
 
 • Now give /refresh Command to the bot and then send /play command to invite the music assistant of the bot in your precious group.
 
-• Now all the Setup of the bot is successfully completed. Play your favourite Songs in the vc with high quality and lag free Sound.
+• Now all the Setup of the bot is successfully completed. Play your favourite Songs × Videos in the vc with high quality and lag free Sound.
 
 If you are facing any problem in using this bot then first of all check out command section carefully otherwise kindly report in our support group !!""",
         reply_markup=InlineKeyboardMarkup(
