@@ -93,20 +93,17 @@ Thanks !!""",
 async def guide_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
-        f"""⚠️ Read Basic Guide Carefully !!
+        f"""Read the basic guide carefully if you don't know how to use this amazing bot properly !!
 
+• First of all add this amazing bot in your group.
 
-» First add this bot in your group
+• Make bot as a administrator of your group with needed powers.
 
-» Make a bot admin
+• Now give /refresh Command to the bot and then send /play command to invite the music assistant of the bot in your precious group.
 
-» Give needed admin permission
+• Now all the Setup of the bot is successfully completed. Play your favourite Songs in the vc with high quality and lag free Sound.
 
-» Type /refresh in your group
-
-» Start your groups voice chat
-
-» Now play your song and enjoy""",
+If you are facing any problem in using this bot then first of all check out command section carefully otherwise kindly report in our support group !!""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
