@@ -73,7 +73,7 @@ async def song_downloader(_, message):
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        await m.edit("Uploading 📤 Your Song !!")
+        await m.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
         await message.reply_audio(
             audio_file,
             caption=rep,
@@ -135,7 +135,7 @@ async def video_downloader(_, message):
         traceback.print_exc()
         return await msg.edit(f"Error ⚠️ 404")
     preview = wget.download(thumbnail)
-    await msg.edit("Uploading 📤 Your Video !!")
+    await msg.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
