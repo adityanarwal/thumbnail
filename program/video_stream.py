@@ -107,7 +107,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         if not link:
             loser = await replied.reply("**Downloading**\n\n0% ■■■■■■■■■■ 100%")
         else:
-            loser = await m.reply("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
+            loser = await m.reply("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
         dl = await replied.download()
         link = replied.link
         songname = "video"
@@ -374,7 +374,7 @@ async def video_stream(c: Client, m: Message):
                         remove_if_exists(image)
                     else:
                         try:
-                            await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
+                            await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
                             await music_on(chat_id)
                             await add_active_chat(chat_id)
                             await calls.join_group_call(
@@ -514,7 +514,7 @@ async def live_video_stream(c: Client, m: Message):
                     elif Q == 360:
                         amaze = LowQualityVideo
                     try:
-                        await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
+                        await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
@@ -576,7 +576,7 @@ async def live_video_stream(c: Client, m: Message):
                     elif Q == 360:
                         amaze = LowQualityVideo()
                     try:
-                        await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
+                        await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
