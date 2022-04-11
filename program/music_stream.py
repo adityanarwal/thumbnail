@@ -434,7 +434,7 @@ async def live_music_stream(c: Client, m: Message):
         await m.reply_text("» Give me a youtube live url to stream❗")
     else:
         url = m.text.split(None, 1)[1]
-        msg = await m.reply_text("Processing....")
+        msg = await m.reply_text("**Downloading**\n\n0% ■■■■■■■■■■ 100%")
         regex = r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+"
         match = re.match(regex, url)
         if match:
@@ -510,7 +510,7 @@ async def live_music_stream(c: Client, m: Message):
                     remove_if_exists(image)
                 else:
                     try:
-                        await msg.edit_text("Connecting....")
+                        await msg.edit_text("**Downloaded Successfully**\n\n**Song** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
