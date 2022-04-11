@@ -153,7 +153,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             remove_if_exists(image)
         else:
             try:
-                await loser.edit("**Downloaded Successfully**\n\n**Video** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                 gcname = m.chat.title
                 ctitle = await CHAT_TITLE(gcname)
                 title = songname
@@ -295,7 +295,7 @@ async def video_stream(c: Client, m: Message):
                             remove_if_exists(image)
                         else:
                             try:
-                                await loser.edit("**Downloaded Successfully**\n\n**Song** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                                await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                                 await music_on(chat_id)
                                 await add_active_chat(chat_id)
                                 await calls.join_group_call(
@@ -374,7 +374,7 @@ async def video_stream(c: Client, m: Message):
                         remove_if_exists(image)
                     else:
                         try:
-                            await loser.edit("**Downloaded Successfully**\n\n**Song** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                            await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                             await music_on(chat_id)
                             await add_active_chat(chat_id)
                             await calls.join_group_call(
@@ -514,7 +514,7 @@ async def live_video_stream(c: Client, m: Message):
                     elif Q == 360:
                         amaze = LowQualityVideo
                     try:
-                        await loser.edit("**Downloaded Successfully**\n\n**Video** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                        await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
@@ -576,7 +576,7 @@ async def live_video_stream(c: Client, m: Message):
                     elif Q == 360:
                         amaze = LowQualityVideo()
                     try:
-                        await loser.edit("**Downloaded Successfully**\n\n**Video** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                        await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
