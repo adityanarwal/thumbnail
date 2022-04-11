@@ -135,7 +135,7 @@ async def video_downloader(_, message):
         traceback.print_exc()
         return await msg.edit(f"Error ⚠️ 404")
     preview = wget.download(thumbnail)
-    await msg.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
+    await msg.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
