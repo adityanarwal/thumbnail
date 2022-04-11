@@ -168,7 +168,6 @@ async def approve_join_chat(c: Client, m: ChatJoinRequest):
         await c.approve_chat_join_request(m.chat.id, m.from_user.id)
 
 
-
 chat_watcher_group = 5
 
 @Client.on_message(group=chat_watcher_group)
