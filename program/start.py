@@ -168,37 +168,6 @@ async def approve_join_chat(c: Client, m: ChatJoinRequest):
         await c.approve_chat_join_request(m.chat.id, m.from_user.id)
 
 
-@Client.on_message(filters.new_chat_members)
-async def new_chat(c: Client, m: Message):
-    chat_id = m.chat.id
-    if await is_served_chat(chat_id):
-        pass
-    else:
-        await add_served_chat(chat_id)
-    for member in m.new_chat_members:
-        try:
-            if member.id == me_bot.id:
-                if chat_id in await blacklisted_chats():
-                    await m.reply_text(
-                        "This chat has blacklisted by sudo user and You're not allowed to use me in this chat❗"
-                    )
-                    return await bot.leave_chat(chat_id)
-            if member.id == me_bot.id:
-                return await m.reply(
-                    "Thanks for adding me in your group. Now make me admin with needed permission, otherwise i am not able to work properly in your group❗️",
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("📨 𝗨𝗉𝖽𝖺𝗍𝖾𝗌", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                                InlineKeyboardButton("𝗦𝗎𝗉𝗉𝗈𝗋𝗍 📨", url=f"https://t.me/{GROUP_SUPPORT}")
-                            ],
-                        ]
-                    )
-                )
-            return
-        except Exception:
-            return
-
 
 chat_watcher_group = 5
 
@@ -233,17 +202,17 @@ async def help(client: Client, message: Message):
     )
 
 
-@Client.on_message(commandpro(["/start", "/help"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["/start", "/help"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/dd9ca2b2122dd68ffab0e.png",
-        caption=f"""Thanks For Adding Me To Ur Chat, For Any Query U Can Join Our Support Groups 🔥♥️""",
+        caption=f"""Thanks for adding me to your precious chat !! If you have any queries or facing any problem regarding me then report in our support group.""",
         reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "💥 ᴊᴏɪɴ ʜᴇʀᴇ 💞", url=f"https://t.me/{GROUP_SUPPORT}")
-                ]
-            ]
-        ),
-    )
+                       [
+                            [
+                                InlineKeyboardButton("📨 U𝗉𝖽𝖺𝗍𝖾𝗌", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                                InlineKeyboardButton("S𝗎𝗉𝗉𝗈𝗋𝗍 📨", url=f"https://t.me/{GROUP_SUPPORT}")
+                            ],
+                        ]
+                    )
+                )
