@@ -91,7 +91,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         if not link:
             suhu = await replied.reply("**Downloading**\n\n0% ■■■■■■■■■■ 100%")
         else:
-            suhu = await m.reply("**Downloaded Successfully**\n\n**Song** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+            suhu = await m.reply("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
         dl = await replied.download()
         link = replied.link
         songname = "music"
@@ -275,7 +275,7 @@ async def audio_stream(c: Client, m: Message):
                             remove_if_exists(image)
                         else:
                             try:
-                                await suhu.edit("**Downloaded Successfully**\n\n**Song** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                                await suhu.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                                 await music_on(chat_id)
                                 await add_active_chat(chat_id)
                                 await calls.join_group_call(
@@ -350,7 +350,7 @@ async def audio_stream(c: Client, m: Message):
                         remove_if_exists(image)
                     else:
                         try:
-                            await suhu.edit("**Downloaded Successfully**\n\n**Song** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                            await suhu.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                             await music_on(chat_id)
                             await add_active_chat(chat_id)
                             await calls.join_group_call(
@@ -459,7 +459,7 @@ async def live_music_stream(c: Client, m: Message):
                     )
                 else:
                     try:
-                        await msg.edit_text("**Downloaded Successfully**\n\n**Song** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                        await msg.edit_text("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
