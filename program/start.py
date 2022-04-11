@@ -233,7 +233,7 @@ async def help(client: Client, message: Message):
     )
 
 
-@Client.on_message(commandpro(["/start", "/stats"]) & filters.group & ~filters.edited)
+@Client.on_message(commandpro(["/start", "/help"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/dd9ca2b2122dd68ffab0e.png",
