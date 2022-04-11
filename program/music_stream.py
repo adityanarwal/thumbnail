@@ -144,7 +144,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
                 title = songname
                 userid = m.from_user.id
                 image = await thumb(thumbnail, title, userid, ctitle)
-                await suhu.edit("**Downloaded Successfully**\n\n**Song** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+                await suhu.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
                 await calls.join_group_call(
