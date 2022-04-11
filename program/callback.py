@@ -214,7 +214,7 @@ async def about_set(_, query: CallbackQuery):
 
 • Bot Managed By 
 - @Its_romeoo
-- @Xmm_444
+- @PhoenixWarmed
 
 • Powered by
 - @PHOENIX_EMPIRE
