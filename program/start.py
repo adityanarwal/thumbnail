@@ -231,3 +231,19 @@ async def help(client: Client, message: Message):
             ] 
         ), 
     )
+
+
+@Client.on_message(commandpro(["/start", "/stats"]) & filters.group & ~filters.edited)
+async def start(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/dd9ca2b2122dd68ffab0e.png",
+        caption=f"""Thanks For Adding Me To Ur Chat, For Any Query U Can Join Our Support Groups 🔥♥️""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "💥 ᴊᴏɪɴ ʜᴇʀᴇ 💞", url=f"https://t.me/{GROUP_SUPPORT}")
+                ]
+            ]
+        ),
+    )
