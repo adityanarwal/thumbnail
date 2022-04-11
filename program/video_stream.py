@@ -107,7 +107,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         if not link:
             loser = await replied.reply("**Downloading**\n\n0% ■■■■■■■■■■ 100%")
         else:
-            loser = await m.reply("**Downloaded Successfully**\n\n**Video** :- {title[:22]}\n\n0% ■■■■■■■■■■ 100%\n\n**Duration :- 00:00 Seconds\n\n**FFmpeg Processing....**")
+            loser = await m.reply("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\n**Duration** :- 00:00 MbPs\n\n**Connecting To The Server....**")
         dl = await replied.download()
         link = replied.link
         songname = "video"
