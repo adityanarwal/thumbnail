@@ -84,7 +84,7 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_text(
-        f"""Hello, My name is Broken Music.
+        f"""Hello, My name is Music Mic.
 
 I am easy to use superfast telegram player for playing high quality and unbreakable music and video in your groups voice chat.
 
