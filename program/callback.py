@@ -215,20 +215,37 @@ async def about_set(_, query: CallbackQuery):
 
 • Bot Managed By 
 - @Its_romeoo
-- @PhoenixWarmed
+- @xtm_BidiBaaz
 
 • Powered by
-- @PHOENIX_EMPIRE
-- @CFC_BOTS
+- @StrayCoder
+- @StrayCoderSupport
 
 Note : Contact developers only that time if you have really need a help or facing any type of issues. Don't try to waste our and your time by asking useless queries !!""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔙 Back", callback_data="home_start"),
-                    InlineKeyboardButton("🧑‍💻 Owner", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("Create Your Personal Bot 🤖", callback_data="own_bot")
+                ],[
+                    InlineKeyboardButton("🔙 Back", callback_data="home_start")
                 ],
             ]
+        ),
+    )
+
+
+@Client.on_callback_query(filters.regex("own_bot"))
+@check_blacklist()
+async def own_bot(_, query: CallbackQuery):
+    await query.answer("Create Your Personal Bot")
+    await query.edit_message_text(
+        f"""Tutorial soon at :- @StrayCoder
+
+The Tutorial video about to making your own bot like this will be soon available at @StrayCoderSupport. Also source code and all information about making bot published soon.Stay connected with us at our update channel.
+
+Thanks !!""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔙 Back", callback_data="home_start")]]
         ),
     )
 
