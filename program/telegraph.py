@@ -2,8 +2,8 @@ from telegraph import upload_file
 from pyrogram import filters
 
 
-@client.on_message(command('telegraph')) & ~filters.edited)
-def ul(_, message):
+@Client.on_message(command(["telegraph"]) & ~filters.edited)
+async def help(client: Client, message: Message):
     reply = message.reply_to_message
     if reply.media:
         i = message.reply("**Getting Telegraph Link Of Your Given Media. Please wait !!**")
