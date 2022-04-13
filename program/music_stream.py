@@ -89,7 +89,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         )
     if replied.audio or replied.voice:
         if not link:
-            suhu = await replied.reply("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+            suhu = await replied.reply("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm downloading your audio file and uploading to my Server. Please wait !!")
         else:
             suhu = await m.reply("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nDownloaded Successfully !!\nConnecting to the Server !!")
         dl = await replied.download()
