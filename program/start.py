@@ -187,9 +187,8 @@ async def chat_watcher_func(_, message: Message):
 
 @Client.on_message(command(["repo"]) & ~filters.edited)
 async def help(client: Client, message: Message): 
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/93701927d1a35688f9d55.jpg",
-        caption=f"""""", 
+    await message.reply_text(
+        f"""`Click on the button to get the Source Code. If you have any inquiry regarding to this bot then kindly report in my Support Chat !!`""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
