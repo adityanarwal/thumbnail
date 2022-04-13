@@ -1,3 +1,5 @@
+import asyncio
+
 from telegraph import upload_file
 from pyrogram import filters
 
