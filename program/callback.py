@@ -39,7 +39,7 @@ from config import (
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f"""Hello, My name is Broken Music.
+        f"""Hello, My name is Music Mic.
 
 I'm easy to use superfast telegram player for playing high quality and unbreakable music and video in your groups voice chat.
 
@@ -71,7 +71,7 @@ async def quick_set(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""Mostly Faced Error ⚠️
 
-There wiil be the main error about to music assistant. If you are facing any type of error in your group then that time first make sure @BrokenxMusicAssistant is available in your group. If not then add it manually and before that make sure also it is not banned in your chat.
+There wiil be the main error about to music assistant. If you are facing any type of error in your group then that time first make sure @MusicMicPlayer is available in your group. If not then add it manually and before that make sure also it is not banned in your chat.
 
 
 If you are facing any issues regarding me kindly report in my support group so the developers can fix me out for your needs.
