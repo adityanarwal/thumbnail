@@ -187,7 +187,9 @@ async def chat_watcher_func(_, message: Message):
 
 @Client.on_message(command(["repo"]) & ~filters.edited)
 async def help(client: Client, message: Message): 
-    await message.reply_sticker("CAACAgIAAx0CaSD45gADt2JW4GDc61VpuGdwkP-Yf4RXwMMKAAJfAAPb234AAYSwVJsRrsrjHgQ"), 
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/93701927d1a35688f9d55.jpg",
+        caption=f"""""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
