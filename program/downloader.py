@@ -36,7 +36,7 @@ from driver.utils import remove_if_exists
 async def song_downloader(_, message):
     await message.delete()
     query = " ".join(message.command[1:])
-    m = await message.reply("□□□□□□□□□□ 𝟎%/n/nProcess Started. Wait for the bot server response !!")
+    m = await message.reply("□□□□□□□□□□ 𝟎%\n\nProcess Started. Wait for the bot server response !!")
     ydl_ops = {
         'format': 'bestaudio[ext=m4a]',
         'geo-bypass': True,
