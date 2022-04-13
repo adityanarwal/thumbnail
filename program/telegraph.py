@@ -3,7 +3,7 @@ from pyrogram import filters
 from nksama import bot
 
 
-@client.on_message(filters.command('ul'))
+@client.on_message(filters.command('telegraph'))
 def ul(_, message):
     reply = message.reply_to_message
     if reply.media:
