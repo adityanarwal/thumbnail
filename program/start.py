@@ -185,20 +185,20 @@ async def chat_watcher_func(_, message: Message):
         )
 
 
-@Client.on_message(command(["repo"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["repo"]) & ~filters.edited)
 async def help(client: Client, message: Message): 
     await message.reply_photo( 
-        photo=f"https://telegra.ph//file/1dbc278c59a56d226bd46.jpg", 
+        photo=f"https://telegra.ph/file/ae7b9fc91e49de4171faf.jpg", 
         caption=f"""""", 
         reply_markup=InlineKeyboardMarkup( 
-            [ 
-                [ 
-                    InlineKeyboardButton( 
-                        "❰𝗖𝗅𝗂𝖼𝗄 𝗛𝖾𝗋𝖾 𝗧𝗈 𝗚𝖾𝗍 𝗥𝖾𝗉𝗈❱", url=f"https://t.me/Its_romeoo") 
-                ] 
-            ] 
-        ), 
-    )
+                       [
+                            [
+                                InlineKeyboardButton("📢 Source Code", url=f"tg://need_update_for_some_feature"),
+                                InlineKeyboardButton("Developer 📡", url=f"https://t.me/Its_romeoo")
+                            ],
+                        ]
+                    )
+                )
 
 
 @Client.on_message(command(["start", "help"]) & filters.group & ~filters.edited)
