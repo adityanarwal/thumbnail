@@ -189,7 +189,7 @@ async def chat_watcher_func(_, message: Message):
 async def help(client: Client, message: Message): 
     await message.reply_photo( 
         photo=f"https://telegra.ph/file/ae7b9fc91e49de4171faf.jpg", 
-        caption=f"""""", 
+        caption=f"""The source code and all the information about making bot published soon. Stay connected with us at our Update Channel.""", 
         reply_markup=InlineKeyboardMarkup( 
                        [
                             [
