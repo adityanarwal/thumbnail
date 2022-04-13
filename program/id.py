@@ -2,8 +2,8 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 from config import BOT_USERNAME
-from SJM.filters import command
-from SJM.get_file_id import get_file_id
+from driver.filters import command
+from driver.get_file_id import get_file_id
 
 
 @Client.on_message(command(["id", f"id@{BOT_USERNAME}"]))
