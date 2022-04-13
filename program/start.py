@@ -188,14 +188,15 @@ async def chat_watcher_func(_, message: Message):
 @Client.on_message(command(["repo"]) & ~filters.edited)
 async def help(client: Client, message: Message): 
     await message.reply_sticker("CAACAgIAAx0CaSD45gADt2JW4GDc61VpuGdwkP-Yf4RXwMMKAAJfAAPb234AAYSwVJsRrsrjHgQ"), 
-        reply_markup=InlineKeyboardMarkup( 
-                        [
-                            [
-                                InlineKeyboardButton("❰𝗦𝗼𝘂𝗿𝗰𝗲 𝗖𝗼𝗱𝗲❱", url=f"tg://need_update_for_some_feature")
-                            ],
-                        ]
-                    )
-                )
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "❰𝗦𝗼𝘂𝗿𝗰𝗲 𝗖𝗼𝗱𝗲❱", url=f"tg://need_update_for_some_feature")
+                ]
+            ]
+        ),
+    )
 
 
 @Client.on_message(command(["start", "help"]) & filters.group & ~filters.edited)
