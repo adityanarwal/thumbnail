@@ -105,9 +105,9 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         )
     if replied.video or replied.document:
         if not link:
-            loser = await replied.reply("**Downloading**\n\n0% ■■■■■■■■■■ 100%")
+            loser = await replied.reply("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm downloading your video file and uploading to my Server. Please wait !!")
         else:
-            loser = await m.reply("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
+            loser = await m.reply("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nDownloaded Successfully !!\nConnecting to the Server !!")
         dl = await replied.download()
         link = replied.link
         songname = "video"
@@ -132,7 +132,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             songname = "video"
 
         if chat_id in QUEUE:
-            await loser.edit("**Queuing**\n\n0% ■■■■■■■■■■ 100%")
+            await loser.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
             gcname = m.chat.title
             ctitle = await CHAT_TITLE(gcname)
             title = songname
@@ -153,7 +153,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             remove_if_exists(image)
         else:
             try:
-                await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
+                await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nDownloaded Successfully !!\nConnecting to the Server !!")
                 gcname = m.chat.title
                 ctitle = await CHAT_TITLE(gcname)
                 title = songname
@@ -261,7 +261,7 @@ async def video_stream(c: Client, m: Message):
                 )
             else:
                 Q = 720
-                loser = await c.send_message(chat_id, "**Downloading**\n\n0% ■■■■■■■■■■ 100%")
+                loser = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 amaze = HighQualityVideo()
@@ -282,7 +282,7 @@ async def video_stream(c: Client, m: Message):
                         await loser.edit(f"Y-T DL issue Detected❗️")
                     else:
                         if chat_id in QUEUE:
-                            await loser.edit("**Queuing**\n\n0% ■■■■■■■■■■ 100%")
+                            await loser.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
                             pos = add_to_queue(chat_id, songname, ytlink, url, "video", Q)
                             await loser.delete()
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -295,7 +295,7 @@ async def video_stream(c: Client, m: Message):
                             remove_if_exists(image)
                         else:
                             try:
-                                await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
+                                await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nDownloaded Successfully !!\nConnecting to the Server !!")
                                 await music_on(chat_id)
                                 await add_active_chat(chat_id)
                                 await calls.join_group_call(
@@ -340,7 +340,7 @@ async def video_stream(c: Client, m: Message):
                 continue
         else:
             Q = 720
-            loser = await c.send_message(chat_id, "**Downloading**\n\n0% ■■■■■■■■■■ 100%")
+            loser = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             amaze = HighQualityVideo()
@@ -374,7 +374,7 @@ async def video_stream(c: Client, m: Message):
                         remove_if_exists(image)
                     else:
                         try:
-                            await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
+                            await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nDownloaded Successfully !!\nConnecting to the Server !!")
                             await music_on(chat_id)
                             await add_active_chat(chat_id)
                             await calls.join_group_call(
@@ -466,7 +466,7 @@ async def live_video_stream(c: Client, m: Message):
             Q = 720
             url = m.text.split(None, 1)[1]
             search = ytsearch(url)
-            loser = await c.send_message(chat_id, "**Downloading**\n\n0% ■■■■■■■■■■ 100%")
+            loser = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
         elif len(m.command) == 3:
             op = m.text.split(None, 1)[1]
             url = op.split(None, 1)[0]
@@ -479,7 +479,7 @@ async def live_video_stream(c: Client, m: Message):
                 await m.reply_text(
                     "» started streaming the live video in 720p quality"
                 )
-            loser = await c.send_message(chat_id, "**Downloading**\n\n0% ■■■■■■■■■■ 100%")
+            loser = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
         else:
             pass
 
@@ -514,7 +514,7 @@ async def live_video_stream(c: Client, m: Message):
                     elif Q == 360:
                         amaze = LowQualityVideo
                     try:
-                        await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
+                        await loser.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
@@ -557,7 +557,7 @@ async def live_video_stream(c: Client, m: Message):
                 ctitle = await CHAT_TITLE(gcname)
                 image = await thumb(thumbnail, title, userid, ctitle)
                 if chat_id in QUEUE:
-                    await loser.edit("**Downloading**\n\n0% ■■■■■■■■■■ 100%")
+                    await loser.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
                     pos = add_to_queue(chat_id, songname, livelink, url, "video", Q)
                     await loser.delete()
                     requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -576,7 +576,7 @@ async def live_video_stream(c: Client, m: Message):
                     elif Q == 360:
                         amaze = LowQualityVideo()
                     try:
-                        await loser.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
+                        await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nDownloaded Successfully !!\nConnecting to the Server !!")
                         await music_on(chat_id)
                         await add_active_chat(chat_id)
                         await calls.join_group_call(
