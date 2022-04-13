@@ -192,6 +192,7 @@ async def sudo_set(_, query: CallbackQuery):
 
 » /eval - run an code
 » /sh - run an code
+» /id - Get id of a [Chat , User , Sticker]
 » /sysinfo - show the system information
 » /repo - Get The Bot Repo !!
 » /alive - show the bot alive info (in Group only)
