@@ -1,13 +1,12 @@
 from telegraph import upload_file
 from pyrogram import filters
-from nksama import bot
 
 
-@client.on_message(command('telegraph'))
+@client.on_message(command('telegraph')) & ~filters.edited)
 def ul(_, message):
     reply = message.reply_to_message
     if reply.media:
-        i = message.reply("**Downloading....**")
+        i = message.reply("**Getting Telegraph Link Of Your Given Media. Please wait !!**")
         path = reply.download()
         fk = upload_file(path)
         for x in fk:
