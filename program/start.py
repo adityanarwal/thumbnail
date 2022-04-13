@@ -187,14 +187,11 @@ async def chat_watcher_func(_, message: Message):
 
 @Client.on_message(command(["repo"]) & ~filters.edited)
 async def help(client: Client, message: Message): 
-    await message.reply_photo( 
-        photo=f"https://telegra.ph/file/ae7b9fc91e49de4171faf.jpg", 
-        caption=f"""The source code and all the information about making bot published soon. Stay connected with us at our Update Channel.""", 
+    await message.reply_sticker("CAACAgIAAx0CaSD45gADt2JW4GDc61VpuGdwkP-Yf4RXwMMKAAJfAAPb234AAYSwVJsRrsrjHgQ"), 
         reply_markup=InlineKeyboardMarkup( 
-                       [
+                        [
                             [
-                                InlineKeyboardButton("📢 Source Code", url=f"tg://need_update_for_some_feature"),
-                                InlineKeyboardButton("Developer 📡", url=f"https://t.me/Its_romeoo")
+                                InlineKeyboardButton("❰𝗦𝗼𝘂𝗿𝗰𝗲 𝗖𝗼𝗱𝗲❱", url=f"tg://need_update_for_some_feature")
                             ],
                         ]
                     )
