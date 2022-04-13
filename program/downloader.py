@@ -36,7 +36,7 @@ from driver.utils import remove_if_exists
 async def song_downloader(_, message):
     await message.delete()
     query = " ".join(message.command[1:])
-    m = await message.reply("Processing....")
+    m = await message.reply("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
     ydl_ops = {
         'format': 'bestaudio[ext=m4a]',
         'geo-bypass': True,
@@ -61,7 +61,7 @@ async def song_downloader(_, message):
         await m.edit("Song Not Found, Give a valid Song Name or Somg Link to download ❗")
         print(str(e))
         return
-    await m.edit("Downloading 📥 Your Song !!")
+    await m.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -73,7 +73,7 @@ async def song_downloader(_, message):
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        await m.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
+        await m.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nDownloaded Successfully !!\nConnecting to the Server !!")
         await message.reply_audio(
             audio_file,
             caption=rep,
@@ -127,7 +127,7 @@ async def video_downloader(_, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("Downloading 📥 Your Video !!")
+        msg = await message.reply("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
@@ -135,7 +135,7 @@ async def video_downloader(_, message):
         traceback.print_exc()
         return await msg.edit(f"Error ⚠️ 404")
     preview = wget.download(thumbnail)
-    await msg.edit("**Downloaded Successfully !!**\n\n**0% ■■■■■■■■■■ 100%**\n\nDuration :- 00:00 MbPs\n\n__Connecting To The Server....__")
+    await msg.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nDownloaded Successfully !!\nConnecting to the Server !!")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
