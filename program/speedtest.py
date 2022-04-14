@@ -35,20 +35,20 @@ from pyrogram.types import Message
 @Client.on_message(command(["speedtest", f"speedtest@{bname}"]) & ~filters.edited)
 
 async def run_speedtest(_, message: Message):
-    m = await message.reply_text("Running Speed Test !!")
+    m = await message.reply_text("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%")
     try:
         test = speedtest.Speedtest()
         test.get_best_server()
-        m = await m.edit("Download Speed....")
+        m = await m.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nRunning Downloading SpeedTest !!")
         test.download()
-        m = await m.edit("Upload Speed....")
+        m = await m.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nRunning Uploading SpeedTest !!")
         test.upload()
         test.results.share()
         result = test.results.dict()
     except Exception as e:
         await m.edit(e)
         return
-    m = await m.edit("Bot speed test results....")
+    m = await m.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nSharing SpeedTest results to you. Please wait !!")
     path = wget.download(result["share"])
     try:
         img = Image.open(path)
