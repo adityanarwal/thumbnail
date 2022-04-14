@@ -240,7 +240,7 @@ async def audio_stream(c: Client, m: Message):
                     "Give Something To Play❗️"
                 )
             else:
-                suhu = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+                suhu = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
@@ -317,7 +317,7 @@ async def audio_stream(c: Client, m: Message):
                     await play_tg_file(c, m, link=i)
                 continue
         else:
-            suhu = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+            suhu = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -434,7 +434,7 @@ async def live_music_stream(c: Client, m: Message):
         await m.reply_text("» Give me a youtube live url to stream❗")
     else:
         url = m.text.split(None, 1)[1]
-        msg = await m.reply_text("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+        msg = await m.reply_text("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
         regex = r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+"
         match = re.match(regex, url)
         if match:
