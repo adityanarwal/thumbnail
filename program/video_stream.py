@@ -132,7 +132,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             songname = "video"
 
         if chat_id in QUEUE:
-            await loser.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
+            await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour video successfully added to the Queue. Playing via Stray Coder Server !!")
             gcname = m.chat.title
             ctitle = await CHAT_TITLE(gcname)
             title = songname
@@ -282,7 +282,7 @@ async def video_stream(c: Client, m: Message):
                         await loser.edit(f"Y-T DL issue Detected❗️")
                     else:
                         if chat_id in QUEUE:
-                            await loser.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
+                            await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour video successfully added to the Queue. Playing via Stray Coder Server !!")
                             pos = add_to_queue(chat_id, songname, ytlink, url, "video", Q)
                             await loser.delete()
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -361,7 +361,7 @@ async def video_stream(c: Client, m: Message):
                     await loser.edit("Y-T DL issue Detected❗️")
                 else:
                     if chat_id in QUEUE:
-                        await loser.edit("Queueing Video....")
+                        await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour video successfully added to the Queue. Playing via Stray Coder Server !!")
                         pos = add_to_queue(chat_id, songname, ytlink, url, "video", Q)
                         await loser.delete()
                         requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -496,7 +496,7 @@ async def live_video_stream(c: Client, m: Message):
         else:
             if "m3u8" in url:
                 if chat_id in QUEUE:
-                    await loser.edit("~ Queueing Video....")
+                    await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour video successfully added to the Queue. Playing via Stray Coder Server !!")
                     pos = add_to_queue(chat_id, "m3u8 video", livelink, url, "video", Q)
                     await loser.delete()
                     requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -557,7 +557,7 @@ async def live_video_stream(c: Client, m: Message):
                 ctitle = await CHAT_TITLE(gcname)
                 image = await thumb(thumbnail, title, userid, ctitle)
                 if chat_id in QUEUE:
-                    await loser.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
+                    await loser.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour video successfully added to the Queue. Playing via Stray Coder Server !!")
                     pos = add_to_queue(chat_id, songname, livelink, url, "video", Q)
                     await loser.delete()
                     requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
