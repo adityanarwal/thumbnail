@@ -261,7 +261,7 @@ async def video_stream(c: Client, m: Message):
                 )
             else:
                 Q = 720
-                loser = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your video from the YouTube server. Please wait !!")
+                loser = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 amaze = HighQualityVideo()
