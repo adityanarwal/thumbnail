@@ -119,7 +119,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             thumbnail = f"{IMG_5}"
 
         if chat_id in QUEUE:
-            await suhu.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+            await suhu.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
             gcname = m.chat.title
             ctitle = await CHAT_TITLE(gcname)
             title = songname
@@ -240,7 +240,7 @@ async def audio_stream(c: Client, m: Message):
                     "Give Something To Play❗️"
                 )
             else:
-                suhu = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
+                suhu = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
@@ -260,7 +260,7 @@ async def audio_stream(c: Client, m: Message):
                         await suhu.edit(f"Y-T DL issue Detected❗️")
                     else:
                         if chat_id in QUEUE:
-                            await suhu.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+                            await suhu.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
                             pos = add_to_queue(
                                 chat_id, songname, ytlink, url, "music", 0
                             )
@@ -317,7 +317,7 @@ async def audio_stream(c: Client, m: Message):
                     await play_tg_file(c, m, link=i)
                 continue
         else:
-            suhu = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
+            suhu = await c.send_message(chat_id, "𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -337,7 +337,7 @@ async def audio_stream(c: Client, m: Message):
                     await suhu.edit(f"Y-T DL issue Detected❗️")
                 else:
                     if chat_id in QUEUE:
-                        await suhu.edit("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+                        await suhu.edit("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
                         pos = add_to_queue(chat_id, songname, ytlink, url, "music", 0)
                         await suhu.delete()
                         requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -434,7 +434,7 @@ async def live_music_stream(c: Client, m: Message):
         await m.reply_text("» Give me a youtube live url to stream❗")
     else:
         url = m.text.split(None, 1)[1]
-        msg = await m.reply_text("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
+        msg = await m.reply_text("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
         regex = r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+"
         match = re.match(regex, url)
         if match:
@@ -447,7 +447,7 @@ async def live_music_stream(c: Client, m: Message):
         else:
             if "m3u8" in url:
                 if chat_id in QUEUE:
-                    await msg.edit_text("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+                    await msg.edit_text("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
                     pos = add_to_queue(chat_id, "m3u8 audio", data, url, "music", 0)
                     await msg.delete()
                     requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -497,7 +497,7 @@ async def live_music_stream(c: Client, m: Message):
                 ctitle = await CHAT_TITLE(gcname)
                 image = await thumb(thumbnail, title, userid, ctitle)
                 if chat_id in QUEUE:
-                    await msg.edit_text("𝟎% ■■■■■■■■■■ 𝟎%\n\nI'm searching for your song from the YouTube server. Please wait !!")
+                    await msg.edit_text("𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nYour song successfully added to the Queue. Playing via Stray Coder Server !!")
                     pos = add_to_queue(chat_id, songname, data, url, "music", 0)
                     await msg.delete()
                     requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
