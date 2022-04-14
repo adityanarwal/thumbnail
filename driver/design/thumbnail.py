@@ -10,8 +10,6 @@ from PIL import (
 
 def changeImageSize(maxWidth, maxHeight, image):
     if image.size[0] == image.size[1]:
-        # Does not change the scale of the orientation image and displays it centered.
-        # It may look even better
         newImage = image.resize((maxHeight, maxHeight))
         img = Image.new("RGBA", (maxWidth, maxHeight))
         img.paste(newImage, (int((maxWidth - maxHeight) / 2), 0))
@@ -45,17 +43,19 @@ async def thumb(thumbnail, title, userid, ctitle):
     Image.alpha_composite(image5, image6).save(f"search/temp{userid}.png")
     img = Image.open(f"search/temp{userid}.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("driver/source/regular.ttf", 50)
-    font2 = ImageFont.truetype("driver/source/medium.ttf", 72)
-    draw.text((190, 550), f"Title: {title}", (255, 255, 255), font=font)
+    font = ImageFont.truetype("driver/source/regular.ttf", 49)
+    font2 = ImageFont.truetype("driver/source/medium.ttf", 70)
     draw.text(
-(190, 590), f"views: {views}", (255, 255, 255), font=font
+        (30, 615),
+        f"{title[:20]}...",
+        fill="black",
+        font=font2,
     )
-    draw.text((190, 630), f"Developed By: @Its_romeoo", (255, 255, 255), font=font)
-    draw.text((190, 670),
- f"Powered By: @StrayCoder",
- (255, 255, 255),
- font=font,
+    draw.text(
+        (30, 543),
+        f"Playing on {ctitle[:12]}",
+        fill="black",
+        font=font,
     )
     img.save(f"search/final{userid}.png")
     os.remove(f"search/temp{userid}.png")
