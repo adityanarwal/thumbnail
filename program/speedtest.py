@@ -57,7 +57,7 @@ async def run_speedtest(_, message: Message):
     except BaseException:
         pass
 
-    output = f"""**Bot Server Speed :-**
+    output = f"""**ᴍᴜsɪᴄ ᴍɪᴄ sᴇʀᴠᴇʀ sᴘᴇᴇᴅ**
     
 <u>**Client :**</u>
 **ISP -** {result['client']['isp']}
