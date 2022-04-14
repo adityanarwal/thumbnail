@@ -47,17 +47,15 @@ async def thumb(thumbnail, title, userid, ctitle):
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("driver/source/regular.ttf", 50)
     font2 = ImageFont.truetype("driver/source/medium.ttf", 72)
+    draw.text((190, 550), f"Title: {title}", (255, 255, 255), font=font)
     draw.text(
-        (25, 615),
-        f"{title[:20]}...",
-        fill="black",
-        font=font2,
+(190, 590), f"views: {views}", (255, 255, 255), font=font
     )
-    draw.text(
-        (27, 543),
-        f"Playing on {ctitle[:12]}",
-        fill="black",
-        font=font,
+    draw.text((190, 630), f"Developed By: @Its_romeoo", (255, 255, 255), font=font)
+    draw.text((190, 670),
+ f"Powered By: @StrayCoder",
+ (255, 255, 255),
+ font=font,
     )
     img.save(f"search/final{userid}.png")
     os.remove(f"search/temp{userid}.png")
